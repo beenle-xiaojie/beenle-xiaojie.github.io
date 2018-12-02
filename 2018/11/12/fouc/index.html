@@ -7,18 +7,18 @@
   
   <title>FOUC和白屏 | 小白来披荆斩棘</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="FOUC(Flash of Unstyled Content,无样式内容闪烁)原理:当样式表晚于结构性html加载，当加载到此样式表时，页面将停止之前的渲染。此样式表被下载和解析后，将重新渲染页面，也就出现了短暂的花屏现象. 产生原因: FOUC的产生和浏览器的渲染机制有关.主要是由于浏览器先显示已加载的HTML内容，等到CSS加载完成后重新对内容添加样式导致，主要代表有Firefox。导致FOU">
+  <meta name="description" content="FOUC(Flash of Unstyled Content,无样式内容闪烁)原理:当样式表晚于结构性html加载，当加载到此样式表时，页面将停止之前的渲染。此样式表被下载和解析后，将重新渲染页面，也就出现了短暂的花屏现象. 产生原因:FOUC的产生和浏览器的渲染机制有关.主要是由于浏览器先显示已加载的HTML内容，等到CSS加载完成后重新对内容添加样式导致，主要代表有Firefox。导致FOUC">
 <meta name="keywords" content="前端必知技能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FOUC和白屏">
 <meta property="og:url" content="http://yoursite.com/2018/11/12/fouc/index.html">
 <meta property="og:site_name" content="小白来披荆斩棘">
-<meta property="og:description" content="FOUC(Flash of Unstyled Content,无样式内容闪烁)原理:当样式表晚于结构性html加载，当加载到此样式表时，页面将停止之前的渲染。此样式表被下载和解析后，将重新渲染页面，也就出现了短暂的花屏现象. 产生原因: FOUC的产生和浏览器的渲染机制有关.主要是由于浏览器先显示已加载的HTML内容，等到CSS加载完成后重新对内容添加样式导致，主要代表有Firefox。导致FOU">
+<meta property="og:description" content="FOUC(Flash of Unstyled Content,无样式内容闪烁)原理:当样式表晚于结构性html加载，当加载到此样式表时，页面将停止之前的渲染。此样式表被下载和解析后，将重新渲染页面，也就出现了短暂的花屏现象. 产生原因:FOUC的产生和浏览器的渲染机制有关.主要是由于浏览器先显示已加载的HTML内容，等到CSS加载完成后重新对内容添加样式导致，主要代表有Firefox。导致FOUC">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-02T12:01:42.327Z">
+<meta property="og:updated_time" content="2018-12-02T12:06:36.633Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FOUC和白屏">
-<meta name="twitter:description" content="FOUC(Flash of Unstyled Content,无样式内容闪烁)原理:当样式表晚于结构性html加载，当加载到此样式表时，页面将停止之前的渲染。此样式表被下载和解析后，将重新渲染页面，也就出现了短暂的花屏现象. 产生原因: FOUC的产生和浏览器的渲染机制有关.主要是由于浏览器先显示已加载的HTML内容，等到CSS加载完成后重新对内容添加样式导致，主要代表有Firefox。导致FOU">
+<meta name="twitter:description" content="FOUC(Flash of Unstyled Content,无样式内容闪烁)原理:当样式表晚于结构性html加载，当加载到此样式表时，页面将停止之前的渲染。此样式表被下载和解析后，将重新渲染页面，也就出现了短暂的花屏现象. 产生原因:FOUC的产生和浏览器的渲染机制有关.主要是由于浏览器先显示已加载的HTML内容，等到CSS加载完成后重新对内容添加样式导致，主要代表有Firefox。导致FOUC">
   
     <link rel="alternate" href="/atom.xml" title="小白来披荆斩棘" type="application/atom+xml">
   
@@ -88,15 +88,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="FOUC-Flash-of-Unstyled-Content-无样式内容闪烁"><a href="#FOUC-Flash-of-Unstyled-Content-无样式内容闪烁" class="headerlink" title="FOUC(Flash of Unstyled Content,无样式内容闪烁)"></a>FOUC(Flash of Unstyled Content,无样式内容闪烁)</h2><p><strong>原理:</strong><br>当样式表晚于结构性html加载，当加载到此样式表时，页面将停止之前的渲染。此样式表被下载和解析后，将重新渲染页面，也就出现了短暂的花屏现象.</p>
-<p><strong>产生原因:</strong></p>
-<p>FOUC的产生和浏览器的渲染机制有关.主要是由于浏览器先显示已加载的HTML内容，等到CSS加载完成后重新对内容添加样式导致，主要代表有Firefox。导致FOUC的原因有以下三种：</p>
+<p><strong>产生原因:</strong><br>FOUC的产生和浏览器的渲染机制有关.主要是由于浏览器先显示已加载的HTML内容，等到CSS加载完成后重新对内容添加样式导致，主要代表有Firefox。导致FOUC的原因有以下三种：</p>
 <ul>
 <li>使用<code>@import</code>导入样式表;</li>
 <li>将样式表放在页面底部;</li>
 <li>有几个样式表，放在页面不同位置。</li>
 </ul>
-<p><strong>解决办法:</strong></p>
-<p>使用<code>LINK</code>标签将样式表放在文档HEAD中;</p>
+<p><strong>解决办法:</strong><br>使用<code>LINK</code>标签将样式表放在文档HEAD中;</p>
 <h2 id="白屏"><a href="#白屏" class="headerlink" title="白屏"></a>白屏</h2><p><strong>产生原因:</strong></p>
 <ul>
 <li>将<code>CSS</code>文件放在HTML文档的最后;</li>
@@ -108,7 +106,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/12/fouc/" data-id="cjoe4imkz0000rscdzyjm3kjf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/12/fouc/" data-id="cjp6u7hqp00000gcdqa3pvhyx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端必知技能/">前端必知技能</a></li></ul>
