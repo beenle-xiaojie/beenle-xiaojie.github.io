@@ -7,13 +7,17 @@
   
   <title>咕咕鸡不咕咕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="部署小白看这里呦,以centos为例如有需要,在centos上安装 Nginx 1. add nginx repositorysudo yum install epel-release 2. install nginxsudo yum install nginx 3 start nginxnginx 4. restart nginxnginx -s reload配置一个服务在/etc/nginx/">
+<meta property="og:type" content="article">
 <meta property="og:title" content="咕咕鸡不咕咕">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/12/09/deploy/index.html">
 <meta property="og:site_name" content="咕咕鸡不咕咕">
+<meta property="og:description" content="部署小白看这里呦,以centos为例如有需要,在centos上安装 Nginx 1. add nginx repositorysudo yum install epel-release 2. install nginxsudo yum install nginx 3 start nginxnginx 4. restart nginxnginx -s reload配置一个服务在/etc/nginx/">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-09T08:56:22.044Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="咕咕鸡不咕咕">
+<meta name="twitter:description" content="部署小白看这里呦,以centos为例如有需要,在centos上安装 Nginx 1. add nginx repositorysudo yum install epel-release 2. install nginxsudo yum install nginx 3 start nginxnginx 4. restart nginxnginx -s reload配置一个服务在/etc/nginx/">
   
     <link rel="alternate" href="/atom.xml" title="咕咕鸡不咕咕" type="application/atom+xml">
   
@@ -60,9 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-deploy" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-deploy" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/12/09/deploy/" class="article-date">
   <time datetime="2018-12-09T08:52:40.954Z" itemprop="datePublished">2018-12-09</time>
@@ -99,64 +101,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-fouc" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/12/fouc/" class="article-date">
-  <time datetime="2018-11-12T09:37:58.366Z" itemprop="datePublished">2018-11-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/12/fouc/">FOUC和白屏</a>
-    </h1>
+    <a href="/2018/11/12/fouc/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">FOUC和白屏</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="FOUC-Flash-of-Unstyled-Content-无样式内容闪烁"><a href="#FOUC-Flash-of-Unstyled-Content-无样式内容闪烁" class="headerlink" title="FOUC(Flash of Unstyled Content,无样式内容闪烁)"></a>FOUC(Flash of Unstyled Content,无样式内容闪烁)</h2><p><strong>原理:</strong><br>当样式表晚于结构性html加载，当加载到此样式表时，页面将停止之前的渲染。此样式表被下载和解析后，将重新渲染页面，也就出现了短暂的花屏现象.</p>
-<p><strong>产生原因:</strong><br>FOUC的产生和浏览器的渲染机制有关.主要是由于浏览器先显示已加载的HTML内容，等到CSS加载完成后重新对内容添加样式导致，主要代表有Firefox。导致FOUC的原因有以下三种：</p>
-<ul>
-<li>使用<code>@import</code>导入样式表;</li>
-<li>将样式表放在页面底部;</li>
-<li>有几个样式表，放在页面不同位置。</li>
-</ul>
-<p><strong>解决办法:</strong><br>使用<code>LINK</code>标签将样式表放在文档HEAD中;</p>
-<h2 id="白屏"><a href="#白屏" class="headerlink" title="白屏"></a>白屏</h2><p><strong>产生原因:</strong></p>
-<ul>
-<li>将<code>CSS</code>文件放在HTML文档的最后;</li>
-<li>使用<code>@import</code>导入样式表（通过@import引入的CSS文件会被最后加载);</li>
-<li>将<code>JS</code>文件放在头部，未使用<code>defer</code>或<code>async</code>延迟或异步加载JS文件，导致JS阻塞HTML和CSS的加载;</li>
-</ul>
-<p><strong>解决方法和FOUC一样.</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/12/fouc/" data-id="cjpgnmwaa00007gcdgq69rmm8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端必知技能/">前端必知技能</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         
