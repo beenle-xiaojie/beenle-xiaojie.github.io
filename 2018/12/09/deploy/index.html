@@ -5,19 +5,20 @@
   
 
   
-  <title>咕咕鸡不咕咕</title>
+  <title>静态资源部署 | 咕咕鸡不咕咕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="部署小白看这里呦,以centos为例如有需要,在centos上安装 Nginx 1. add nginx repositorysudo yum install epel-release 2. install nginxsudo yum install nginx 3 start nginxnginx 4. restart nginxnginx -s reload配置一个服务在/etc/nginx/">
+  <meta name="description" content="部署小白看这里呦,以centos为例如有需要,在centos上安装 Nginx12345678# 1. add nginx repositorysudo yum install epel-release# 2. install nginxsudo yum install nginx# 3 start nginxnginx# 4. restart nginxnginx -s reload 配置一个服">
+<meta name="keywords" content="前端必知技能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="咕咕鸡不咕咕">
+<meta property="og:title" content="静态资源部署">
 <meta property="og:url" content="http://yoursite.com/2018/12/09/deploy/index.html">
 <meta property="og:site_name" content="咕咕鸡不咕咕">
-<meta property="og:description" content="部署小白看这里呦,以centos为例如有需要,在centos上安装 Nginx 1. add nginx repositorysudo yum install epel-release 2. install nginxsudo yum install nginx 3 start nginxnginx 4. restart nginxnginx -s reload配置一个服务在/etc/nginx/">
+<meta property="og:description" content="部署小白看这里呦,以centos为例如有需要,在centos上安装 Nginx12345678# 1. add nginx repositorysudo yum install epel-release# 2. install nginxsudo yum install nginx# 3 start nginxnginx# 4. restart nginxnginx -s reload 配置一个服">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-09T08:56:22.044Z">
+<meta property="og:updated_time" content="2018-12-09T08:59:01.049Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="咕咕鸡不咕咕">
-<meta name="twitter:description" content="部署小白看这里呦,以centos为例如有需要,在centos上安装 Nginx 1. add nginx repositorysudo yum install epel-release 2. install nginxsudo yum install nginx 3 start nginxnginx 4. restart nginxnginx -s reload配置一个服务在/etc/nginx/">
+<meta name="twitter:title" content="静态资源部署">
+<meta name="twitter:description" content="部署小白看这里呦,以centos为例如有需要,在centos上安装 Nginx12345678# 1. add nginx repositorysudo yum install epel-release# 2. install nginxsudo yum install nginx# 3 start nginxnginx# 4. restart nginxnginx -s reload 配置一个服">
   
     <link rel="alternate" href="/atom.xml" title="咕咕鸡不咕咕" type="application/atom+xml">
   
@@ -74,18 +75,21 @@
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      静态资源部署
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="部署小白看这里呦-以centos为例"><a href="#部署小白看这里呦-以centos为例" class="headerlink" title="部署小白看这里呦,以centos为例"></a>部署小白看这里呦,以centos为例</h3><h4 id="如有需要-在centos上安装-Nginx"><a href="#如有需要-在centos上安装-Nginx" class="headerlink" title="如有需要,在centos上安装 Nginx"></a>如有需要,在centos上安装 Nginx</h4><p><code></code></p>
-<h1 id="1-add-nginx-repository"><a href="#1-add-nginx-repository" class="headerlink" title="1. add nginx repository"></a>1. add nginx repository</h1><p>sudo yum install epel-release</p>
-<h1 id="2-install-nginx"><a href="#2-install-nginx" class="headerlink" title="2. install nginx"></a>2. install nginx</h1><p>sudo yum install nginx</p>
-<h1 id="3-start-nginx"><a href="#3-start-nginx" class="headerlink" title="3 start nginx"></a>3 start nginx</h1><p>nginx</p>
-<h1 id="4-restart-nginx"><a href="#4-restart-nginx" class="headerlink" title="4. restart nginx"></a>4. restart nginx</h1><p>nginx -s reload<br><code></code><br>配置一个服务<br>在<code>/etc/nginx/conf.d</code>目录下面创建一个新文件，建议命名<code>&lt;port&gt;-&lt;name&gt;.conf</code>，文件内容如下：</p>
-<p><code></code><br>server {<br>    listen 9881;<br>    root /opt/public; //文件路径<br>    rewrite ^/$ /index.html redirect;</p>
-<pre><code>location /api {
-    proxy_pass http://localhost:9880/api;
-}
-</code></pre><p>}<br><code></code></p>
+        <h3 id="部署小白看这里呦-以centos为例"><a href="#部署小白看这里呦-以centos为例" class="headerlink" title="部署小白看这里呦,以centos为例"></a>部署小白看这里呦,以centos为例</h3><h4 id="如有需要-在centos上安装-Nginx"><a href="#如有需要-在centos上安装-Nginx" class="headerlink" title="如有需要,在centos上安装 Nginx"></a>如有需要,在centos上安装 Nginx</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 1. add nginx repository</span><br><span class="line">sudo yum install epel-release</span><br><span class="line"># 2. install nginx</span><br><span class="line">sudo yum install nginx</span><br><span class="line"># 3 start nginx</span><br><span class="line">nginx</span><br><span class="line"># 4. restart nginx</span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+<p>配置一个服务<br>在<code>/etc/nginx/conf.d</code>目录下面创建一个新文件，建议命名<code>&lt;port&gt;-&lt;name&gt;.conf</code>，文件内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 9881;</span><br><span class="line">    root /opt/public; //文件路径</span><br><span class="line">    rewrite ^/$ /index.html redirect;</span><br><span class="line"></span><br><span class="line">    location /api &#123;</span><br><span class="line">        proxy_pass http://localhost:9880/api;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="将本地静态资源放入服务器上-这一步必不可少呦"><a href="#将本地静态资源放入服务器上-这一步必不可少呦" class="headerlink" title="将本地静态资源放入服务器上,这一步必不可少呦"></a>将本地静态资源放入服务器上,这一步必不可少呦</h4><p>建议:若是使用命令上传文件,最好是本地压缩后在上传,在进行解压;若是使用可视化工具,可使用工具<code>Filezilla</code>,直接上传;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">静态资源在当前路径下使用scp命令传入nginx上:</span><br><span class="line">scp -r dist.zip root@47.100.44.24:/opt/public</span><br><span class="line">在/opt/public目录下解压:</span><br><span class="line">unzip dist.zip</span><br></pre></td></tr></table></figure>
 <h4 id="安装压缩和解压包zip工具"><a href="#安装压缩和解压包zip工具" class="headerlink" title="安装压缩和解压包zip工具"></a>安装压缩和解压包zip工具</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install zip</span><br><span class="line">yum install unzip</span><br></pre></td></tr></table></figure>
@@ -95,9 +99,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/09/deploy/" data-id="cjpgnmwaz00037gcdg7n3t6ni" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/09/deploy/" data-id="cjpgnplgg00008ucd90357n8i" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端必知技能/">前端必知技能</a></li></ul>
+
     </footer>
   </div>
   
@@ -158,7 +164,7 @@
       <ul>
         
           <li>
-            <a href="/2018/12/09/deploy/">(no title)</a>
+            <a href="/2018/12/09/deploy/">静态资源部署</a>
           </li>
         
           <li>
