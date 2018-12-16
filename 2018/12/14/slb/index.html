@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/11 | 咕咕鸡不咕咕</title>
+  <title>域名+nginx负载均衡 | 咕咕鸡不咕咕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="咕咕鸡不咕咕">
-<meta property="og:url" content="http://yoursite.com/archives/2018/11/index.html">
+  <meta name="description" content="一、域名和证书介绍在近期的前端资源配置中,遇到过域名对应的证书和密钥的对应关系: 1、我们先来看一下域名的分类: 顶级域名: 是互联网DNS等级之中的最高级的域，它保存于DNS根域的名字空间中。顶级域名是域名的最后一个部分，即是域名最后一点之后的字母，例如在example.com这个域名中,顶级域是.com(或.COM),大小写视为相同。   二级域名: 就是最靠近顶级域名左侧的字段。如：zh.w">
+<meta name="keywords" content="部署">
+<meta property="og:type" content="article">
+<meta property="og:title" content="域名+nginx负载均衡">
+<meta property="og:url" content="http://yoursite.com/2018/12/14/slb/index.html">
 <meta property="og:site_name" content="咕咕鸡不咕咕">
+<meta property="og:description" content="一、域名和证书介绍在近期的前端资源配置中,遇到过域名对应的证书和密钥的对应关系: 1、我们先来看一下域名的分类: 顶级域名: 是互联网DNS等级之中的最高级的域，它保存于DNS根域的名字空间中。顶级域名是域名的最后一个部分，即是域名最后一点之后的字母，例如在example.com这个域名中,顶级域是.com(或.COM),大小写视为相同。   二级域名: 就是最靠近顶级域名左侧的字段。如：zh.w">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-14T08:56:59.612Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="咕咕鸡不咕咕">
+<meta name="twitter:title" content="域名+nginx负载均衡">
+<meta name="twitter:description" content="一、域名和证书介绍在近期的前端资源配置中,遇到过域名对应的证书和密钥的对应关系: 1、我们先来看一下域名的分类: 顶级域名: 是互联网DNS等级之中的最高级的域，它保存于DNS根域的名字空间中。顶级域名是域名的最后一个部分，即是域名最后一点之后的字母，例如在example.com这个域名中,顶级域是.com(或.COM),大小写视为相同。   二级域名: 就是最靠近顶级域名左侧的字段。如：zh.w">
   
     <link rel="alternative" href="/atom.xml" title="咕咕鸡不咕咕" type="application/atom+xml">
   
@@ -142,60 +147,224 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-slb" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/12/fouc/" class="archive-article-date">
-  	<time datetime="2018-11-12T09:37:58.366Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/12/fouc/">FOUC和白屏</a>
+    <h1 class="article-title" itemprop="name">
+      域名+nginx负载均衡
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/12/14/slb/" class="archive-article-date">
+  	<time datetime="2018-12-14T08:48:06.414Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、域名和证书介绍"><a href="#一、域名和证书介绍" class="headerlink" title="一、域名和证书介绍"></a>一、域名和证书介绍</h3><p>在近期的前端资源配置中,遇到过域名对应的证书和密钥的对应关系:</p>
+<h4 id="1、我们先来看一下域名的分类"><a href="#1、我们先来看一下域名的分类" class="headerlink" title="1、我们先来看一下域名的分类:"></a>1、我们先来看一下域名的分类:</h4><ul>
+<li>顶级域名:<blockquote>
+<p>是互联网DNS等级之中的最高级的域，它保存于DNS根域的名字空间中。顶级域名是域名的最后一个部分，即是域名最后一点之后的字母，例如在example.com这个域名中,顶级域是.com(或.COM),大小写视为相同。</p>
+</blockquote>
+</li>
+<li>二级域名:<blockquote>
+<p>就是最靠近顶级域名左侧的字段。如：zh.wikipedia.org中，<strong>wikipedia就是二级域名</strong>(有资料认为, 在顶级域名后面, 还存在一级域名, 那么zh就是二级域名)。</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>我国在国际互联网络信息中心（Inter NIC正式注册并运行的顶级域名是.cn,这也是我国的一级域名.在顶级域名之下，我国的二级域名又分为类别域名和行政区域名两类。类别域名共6个,包括用于科研机构的.ac;用于工商金融企业的.com；用于教育机构的.edu；用于政府部门的.gov；用于互联网络信息中心和运行中心的.net；用于非盈利组织的.org。而行政区域名有34个，分别对应于我国各省、自治区和直辖市。</p>
+</blockquote>
+<ul>
+<li>父域名和子域名(也有资料称为二级域名)<blockquote>
+<p>一个相对概念,很好理解.如 <a href="http://www.sina.com.cn" target="_blank" rel="noopener">www.sina.com.cn</a> 和 news.sina.com.cn 都是 sina.com.cn的子域名（或称为二级域名）， sina.com.cn就是父域名。同样,sina.com.cn其实又可以看作是.com.cn的子域名；而com.cn又是.cn的一个子域名</p>
+</blockquote>
+<h4 id="2、ssl证书对应的域名"><a href="#2、ssl证书对应的域名" class="headerlink" title="2、ssl证书对应的域名"></a>2、ssl证书对应的域名</h4>SSL证书有三种类型:</li>
+<li>单域名证书:可以绑定一条带www和不带www的域名，比如admin.com和 <a href="http://www.admin.com" target="_blank" rel="noopener">www.admin.com</a> 就是一条;</li>
+<li>多域名证书:可以绑定250多条任意类型的域名;</li>
+<li>泛域名证书:可以绑定一条顶级域名和顶级域名下的所有二级域名，或者是一条二级域名和二级域名下的所有三级域名。</li>
+</ul>
+<p><strong>那列举这些是为了解决什么问题呢?</strong><br>答:在配置https的时候在一台服务上可能需要配置两个域名或者更多,正常的思维是一个域名那我就要配置一个证书等,但是在配置的时候并不是,发现以.example.com的域名,其下的子域名比如: a..example.com和b.example.com其实使用的是同一份证书,原因就是他们的父域名是同样的.像这种情况,我们只需要在服务器的<code>nginx.conf</code>文件下,配置一份证书就可以了.</p>
+<h3 id="二、nginx负载均衡"><a href="#二、nginx负载均衡" class="headerlink" title="二、nginx负载均衡"></a>二、nginx负载均衡</h3><h5 id="配置负载均衡目的"><a href="#配置负载均衡目的" class="headerlink" title="配置负载均衡目的"></a>配置负载均衡目的</h5><p>是为了解决单个节点压力过大，造成Web服务响应过慢，严重的情况下导致服务瘫痪，无法正常提供服务。</p>
+<p>示例:<br>春节期间在12306网站上，有时查询一张火车票都会很慢，甚至整个网页都卡住不动了,由于一个Web服务同时能处理的用户并发请求的数量有限，同时还有机器故障的情况,所以一个Web站点通常会在N台机器上各部署一套同样的程序。当某一个服务挂掉的时候，还有第二个、第三个、第N个服务。。。继续为用户提供服务.如果有一个服务正在同时处理1000个用户的请求，这个服务的上限可能最多能同时处理1000个用户的请求，这时它已经很忙了，如果此时又有一个新请求过来，我们仍然把这个请求分配给这台机器，这时候这个请求就只能在干等着，等这个服务处理完那些请求后，再继续处理它。</p>
+<h5 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h5><p>将用户的所有HTTP请求均衡的分配到每一台机器上，充分发挥所有机器的性能，提高服务的质量和用户体验。</p>
+<h5 id="配置样例"><a href="#配置样例" class="headerlink" title="配置样例"></a>配置样例</h5><p>实现负载均衡常用的Web服务器软件有Nginx、Apache等,本文介绍nginx下负载均衡策略;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">upstream slb &#123;</span><br><span class="line">    server 192.168.0.100:8080 weight=2 max_fails=3 fail_timeout=1;  # 2/6次</span><br><span class="line">    server 192.168.0.101:8080 weight=3;  # 3/6次</span><br><span class="line">    server 192.168.0.102:8080 weight=1;  # 1/6次</span><br><span class="line">&#125;</span><br><span class="line">server&#123;</span><br><span class="line">    listen 443; //默认是443端口,若不设置其他端口,在配置域名的情况下,可通过域名直接访问</span><br><span class="line">    server_name  xxx.example.com;</span><br><span class="line"></span><br><span class="line">    location ~ /api &#123;</span><br><span class="line">        proxy_pass http://slb;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>proxy_pass <a href="http://slb" target="_blank" rel="noopener">http://slb</a> 表示将所有请求转发到slb服务器组中配置的某一台服务器上;</li>
+<li>upstream模块：配置反向代理服务器组，Nginx会根据配置，将请求分发给组里的某一台服务器,slb是服务器组的名称;</li>
+<li>upstream模块下的server指令：配置处理请求的服务器IP或域名，端口可选，不配置默认使用80端口。通过上面的配置，Nginx默认将请求依次分配给100，101，102来处理，可以通过修改一些参数来改变默认的分配策略：</li>
+</ul>
+<blockquote>
+<p>weight:默认为1，将请求平均分配给每台server;</p>
+</blockquote>
+<blockquote>
+<p>max_fails:默认为1。某台Server允许请求失败的次数，超过最大次数后，在fail_timeout时间内，新的请求将不会分配给这台机器。如果设置为0，Nginx会将这台Server置为永久无效状态，然后将请求发给定义了proxy_next_upstream, fastcgi_next_upstream, uwsgi_next_upstream, scgi_next_upstream, and memcached_next_upstream指令来处理这次错误的请求;</p>
+</blockquote>
+<blockquote>
+<p>fail_timeout:<br>默认为10秒,某台Server达到max_fails次失败请求后，在fail_timeout期间内，nginx会认为这台Server暂时不可用，不会将请求分配给它;</p>
+</blockquote>
+<blockquote>
+<p>还有一些参数,比如:backup, down, max_conns, resolve</p>
+</blockquote>
+<p>说明:简单的配置其实就用到了<code>upstream</code>,如有兴趣,可对其进行深入的了解,做前端,了解一些配置、系统、后端的知识还是很有必要的;</p>
+<!-- [参考链接](https://blog.csdn.net/xyang81/article/details/51702900) -->
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">前端必知技能</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/14/slb/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/12/09/deploy/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">静态资源部署</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+  <div id="SOHUCS" sid="slb" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -218,8 +387,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
