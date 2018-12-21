@@ -144,6 +144,106 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git-bisect" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/21/git-bisect/">git disect 二分法快速定位问题代码</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/21/git-bisect/" class="archive-article-date">
+  	<time datetime="2018-12-21T07:46:14.756Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="git-disect-二分法快速定位问题代码"><a href="#git-disect-二分法快速定位问题代码" class="headerlink" title="git disect 二分法快速定位问题代码"></a>git disect 二分法快速定位问题代码</h3><h4 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h4><p>前两天还好好的功能，怎么这个今天就不行了？这两天改动了很多代码，到底是那一次改动引发的 Bug？无从查起……</p>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>Git提供的bisect这一命令,就是二分法查找快速地在提交中定位 Bug,少则几次,多则十几次就会定位到引入Bug的提交.</p>
+<h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h4><p>举个例子:</p>
+<p>一个人在1到100的数字中随意选择一个，另外一个人来猜，比起一个挨着一个地猜,懂得折半查找的人总是获胜者。</p>
+<h4 id="命令使用"><a href="#命令使用" class="headerlink" title="命令使用"></a>命令使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git bisect 其实很简单，主要是基于几个基本命令：</span><br><span class="line"></span><br><span class="line">git bisect start：准备进行 bisect debug。</span><br><span class="line">git bisect good：标记一个提交为 &quot;good&quot;。</span><br><span class="line">git bisect bad：标记一个提交为 “bad”。</span><br><span class="line">git bisect reset：退出 bisect debug 的状态。</span><br><span class="line"></span><br><span class="line">git bisect 涉及到的命令，非常的清晰简单，下面举个实际的例子，结合上面的解释，就更清晰了</span><br></pre></td></tr></table></figure>
+<h4 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h4><ol>
+<li>查看提交记录</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># git log</span><br><span class="line">    commit 94f6cc</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Fri Dec 21 13:22:55 2018 +0800</span><br><span class="line">        更改多语言</span><br><span class="line">    commit c2237</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Thu Dec 20 19:51:18 2018 +0800</span><br><span class="line">        多语言模拟数据</span><br><span class="line">    commit 50b42</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Thu Dec 20 19:51:01 2018 +0800</span><br><span class="line">        删除模版文件代码</span><br><span class="line">    commit 5be11</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Thu Dec 20 19:50:36 2018 +0800</span><br><span class="line">        分离路由</span><br><span class="line">    commit d3dec</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Thu Dec 20 19:50:03 2018 +0800</span><br><span class="line">        增加多语言</span><br><span class="line">    commit a2de6</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Wed Dec 19 13:09:14 2018 +0800</span><br><span class="line">        语言设置从后台获取</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>开启二分查找</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># git bisect start</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>找出一个好的提交版本进行标记</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># git bisect good a2de6</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>标记bad版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># git bisect bad</span><br><span class="line">    Bisecting: 2 revisions left to test after this (roughly 1 step)</span><br><span class="line">    [5be11] 分离路由</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>当完成对一个好版本和一个坏版本的标记后,Git切换到一个中间版本（5be11),并告诉我们大概需要1步可以找到元凶。</p>
+<ol start="5">
+<li>继续标记版本</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># git bisect good 5be11</span><br><span class="line">    Bisecting: 0 revisions left to test after this (roughly 1 step)</span><br><span class="line">    [d3dec] 删除模版文件代码</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>再来一步</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># git bisect bad</span><br><span class="line">    Bisecting: 0 revisions left to test after this (roughly 0 steps)</span><br><span class="line">    [50b42] 删除模版文件代码</span><br><span class="line"># git bisect bad</span><br><span class="line">    d3dec is the first bad commit</span><br><span class="line">    commit 50b42</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Thu Dec 20 19:50:03 2018 +0800</span><br><span class="line">        删除模版文件代码</span><br></pre></td></tr></table></figure>
+<p>这样元凶就找到了,查看你的提交记录是不是改动了什么东西吧!!!</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git 命令使用</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-slb" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -505,6 +605,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git 命令使用</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">部署</a>
