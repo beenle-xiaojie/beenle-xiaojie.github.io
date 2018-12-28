@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="咕咕鸡不咕咕">
 <meta property="og:description" content="痛点前两天还好好的功能，怎么这个今天就不行了？这两天改动了很多代码，到底是那一次改动引发的 Bug？无从查起…… 解决办法Git提供的bisect这一命令,就是二分法查找快速地在提交中定位 Bug,少则几次,多则十几次就会定位到引入Bug的提交. 二分查找举个例子: 一个人在1到100的数字中随意选择一个，另外一个人来猜，比起一个挨着一个地猜,懂得折半查找的人总是获胜者。 命令使用12345678">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-25T01:50:21.243Z">
+<meta property="og:updated_time" content="2018-12-28T07:30:37.744Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git bisect 二分法快速定位问题代码">
 <meta name="twitter:description" content="痛点前两天还好好的功能，怎么这个今天就不行了？这两天改动了很多代码，到底是那一次改动引发的 Bug？无从查起…… 解决办法Git提供的bisect这一命令,就是二分法查找快速地在提交中定位 Bug,少则几次,多则十几次就会定位到引入Bug的提交. 二分查找举个例子: 一个人在1到100的数字中随意选择一个，另外一个人来猜，比起一个挨着一个地猜,懂得折半查找的人总是获胜者。 命令使用12345678">
@@ -184,27 +184,6 @@
       
 
       
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
     </div>
     <div class="article-info article-info-index">
       
@@ -314,6 +293,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#痛点"><span class="toc-number">1.</span> <span class="toc-text">痛点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决办法"><span class="toc-number">2.</span> <span class="toc-text">解决办法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二分查找"><span class="toc-number">3.</span> <span class="toc-text">二分查找</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命令使用"><span class="toc-number">4.</span> <span class="toc-text">命令使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#操作步骤"><span class="toc-number">5.</span> <span class="toc-text">操作步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-查看提交记录"><span class="toc-number">6.</span> <span class="toc-text">1. 查看提交记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-开启二分查找"><span class="toc-number">7.</span> <span class="toc-text">2. 开启二分查找</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-找出一个好的提交版本进行标记"><span class="toc-number">8.</span> <span class="toc-text">3. 找出一个好的提交版本进行标记</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-标记bad版本"><span class="toc-number">9.</span> <span class="toc-text">4. 标记bad版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-继续标记版本"><span class="toc-number">10.</span> <span class="toc-text">5. 继续标记版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-再来一步"><span class="toc-number">11.</span> <span class="toc-text">6. 再来一步</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -436,11 +428,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安全验证</a>
+                <a href="javascript:void(0)" class="js-tag color2">前端必知技能</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">git 命令使用</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,11 +440,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">前端必知技能</a>
+                <a href="javascript:void(0)" class="js-tag color5">安全验证</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git 命令使用</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
