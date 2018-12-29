@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="咕咕鸡不咕咕">
 <meta property="og:description" content="一、域名和证书介绍在近期的前端资源配置中,遇到过域名对应的证书和密钥的对应关系: 1、我们先来看一下域名的分类: 顶级域名: 是互联网DNS等级之中的最高级的域，它保存于DNS根域的名字空间中。顶级域名是域名的最后一个部分，即是域名最后一点之后的字母，例如在example.com这个域名中,顶级域是.com(或.COM),大小写视为相同。   二级域名: 就是最靠近顶级域名左侧的字段。如：zh.w">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-14T08:58:19.045Z">
+<meta property="og:updated_time" content="2018-12-28T07:33:41.744Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="域名+nginx负载均衡">
 <meta name="twitter:description" content="一、域名和证书介绍在近期的前端资源配置中,遇到过域名对应的证书和密钥的对应关系: 1、我们先来看一下域名的分类: 顶级域名: 是互联网DNS等级之中的最高级的域，它保存于DNS根域的名字空间中。顶级域名是域名的最后一个部分，即是域名最后一点之后的字母，例如在example.com这个域名中,顶级域是.com(或.COM),大小写视为相同。   二级域名: 就是最靠近顶级域名左侧的字段。如：zh.w">
@@ -329,6 +329,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、域名和证书介绍"><span class="toc-number">1.</span> <span class="toc-text">一、域名和证书介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、我们先来看一下域名的分类"><span class="toc-number">1.1.</span> <span class="toc-text">1、我们先来看一下域名的分类:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、ssl证书对应的域名"><span class="toc-number">1.2.</span> <span class="toc-text">2、ssl证书对应的域名</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、nginx负载均衡"><span class="toc-number">2.</span> <span class="toc-text">二、nginx负载均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#配置负载均衡目的"><span class="toc-number">2.0.1.</span> <span class="toc-text">配置负载均衡目的</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#负载均衡"><span class="toc-number">2.0.2.</span> <span class="toc-text">负载均衡</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置样例"><span class="toc-number">2.0.3.</span> <span class="toc-text">配置样例</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -370,7 +383,7 @@
     </div>
     <div class="foot-center">
         <span id="busuanzi_container_site_uv">
-          本站阅读总数:<span id="busuanzi_value_site_pv"></span>
+          本站总阅读量:<span id="busuanzi_value_site_pv"></span>
         </span>
         <span>,</span>
         <span id="busuanzi_container_page_pv">
@@ -450,15 +463,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">前端必知技能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git 命令使用</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">部署</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,7 +471,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git 命令使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">前端必知技能</a>
               </li>
             
             <div class="clearfix"></div>
