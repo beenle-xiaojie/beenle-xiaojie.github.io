@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>md5加密 + crypto-js aes解密 | 咕咕鸡不咕咕</title>
+  <title>Archives: 2019/1 | 咕咕鸡不咕咕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阐述我们常常会遇到有关支付的问题,在支付的过程中,就会遇到支付安全性的问题,而有关于money的交易,安全措施做的再多也不为过,当然配置https服务那是必须的…… md5加密使用md5加密将参数和时间戳以及随机字符串拼接,按照字典序排序生成签名,放入头部传给后台; 那么问题来了? #1. 为什么要拼接时间戳和随机字符串呢? 答:是为了防止被重放攻击; #2. 按照字母序排序是为什么呢? 答: 防">
-<meta name="keywords" content="安全验证">
-<meta property="og:type" content="article">
-<meta property="og:title" content="md5加密 + crypto-js aes解密">
-<meta property="og:url" content="http://yoursite.com/2018/12/26/encrypt-decrypt/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="咕咕鸡不咕咕">
+<meta property="og:url" content="http://yoursite.com/archives/2019/01/index.html">
 <meta property="og:site_name" content="咕咕鸡不咕咕">
-<meta property="og:description" content="阐述我们常常会遇到有关支付的问题,在支付的过程中,就会遇到支付安全性的问题,而有关于money的交易,安全措施做的再多也不为过,当然配置https服务那是必须的…… md5加密使用md5加密将参数和时间戳以及随机字符串拼接,按照字典序排序生成签名,放入头部传给后台; 那么问题来了? #1. 为什么要拼接时间戳和随机字符串呢? 答:是为了防止被重放攻击; #2. 按照字母序排序是为什么呢? 答: 防">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-28T07:32:21.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="md5加密 + crypto-js aes解密">
-<meta name="twitter:description" content="阐述我们常常会遇到有关支付的问题,在支付的过程中,就会遇到支付安全性的问题,而有关于money的交易,安全措施做的再多也不为过,当然配置https服务那是必须的…… md5加密使用md5加密将参数和时间戳以及随机字符串拼接,按照字典序排序生成签名,放入头部传给后台; 那么问题来了? #1. 为什么要拼接时间戳和随机字符串呢? 答:是为了防止被重放攻击; #2. 按照字母序排序是为什么呢? 答: 防">
+<meta name="twitter:title" content="咕咕鸡不咕咕">
   
     <link rel="alternative" href="/atom.xml" title="咕咕鸡不咕咕" type="application/atom+xml">
   
@@ -147,189 +142,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-encrypt-decrypt" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      md5加密 + crypto-js aes解密
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/01/06/ encode-decode/" class="archive-article-date">
+  	<time datetime="2019-01-06T09:38:20.924Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-06</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/01/06/ encode-decode/">js 编码解码</a>
     </h1>
   
 
-        
-        <a href="/2018/12/26/encrypt-decrypt/" class="archive-article-date">
-  	<time datetime="2018-12-26T09:01:24.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="阐述"><a href="#阐述" class="headerlink" title="阐述"></a>阐述</h4><p>我们常常会遇到有关支付的问题,在支付的过程中,就会遇到支付安全性的问题,而有关于money的交易,安全措施做的再多也不为过,当然配置https服务那是必须的……</p>
-<h4 id="md5加密"><a href="#md5加密" class="headerlink" title="md5加密"></a>md5加密</h4><p>使用<code>md5</code>加密将参数和时间戳以及随机字符串拼接,按照字典序排序生成签名,放入头部传给后台;</p>
-<p>那么问题来了?</p>
-<p>#1. 为什么要拼接时间戳和随机字符串呢?</p>
-<p>答:是为了防止被重放攻击;</p>
-<p>#2. 按照字母序排序是为什么呢?</p>
-<p>答: 防止参数乱序之后，造成加密不一致的问题;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">安装依赖,也可以直接引入js库</span><br><span class="line">npm install md5</span><br><span class="line">生成签名过程,假设前台传入的参数都是object,若参数为字符串,则需另加判断</span><br><span class="line">//参数处理</span><br><span class="line">function A(params) &#123;</span><br><span class="line">    if (typeof params === &apos;object&apos;) &#123;</span><br><span class="line">        var arr = [];</span><br><span class="line">        for (var i in params) &#123;</span><br><span class="line">            if(!(params[i] === null || params[i] === &apos;&apos; || params[i] === undefined))&#123;</span><br><span class="line">                arr.push(i + &apos;=&apos; + (</span><br><span class="line">                    typeof params[i] === &apos;object&apos; ? JSON.stringify(params[i]) : params[i]</span><br><span class="line">                ));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return this.paramsStrSort(arr.join((&apos;&amp;&apos;)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">//生成签名</span><br><span class="line">function B(paramsStr) &#123;</span><br><span class="line">    let tmp = paramsStr + &apos;&amp;c=&apos; + c + &apos;&amp;d=&apos; + d;//c,d为时间戳和随机字符串</span><br><span class="line">    let str = _.split(tmp, &apos;&amp;&apos;).sort().join(&apos;&amp;&apos;);</span><br><span class="line">    let newStr = str + &apos;&amp;key=&apos; + secret;//secret为常量,由后端定义好</span><br><span class="line">    return md5(newStr);</span><br><span class="line">&#125;,</span><br><span class="line">调用过程</span><br><span class="line">paramsObj = &#123; xid: xid, pageSize: pageSize, type: type, pageNo: pageNo &#125;;</span><br><span class="line">sign = getSign(paramsObj);</span><br></pre></td></tr></table></figure>
-<h4 id="crypto-js-aes-解密"><a href="#crypto-js-aes-解密" class="headerlink" title="crypto-js aes 解密"></a>crypto-js aes 解密</h4><h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><p>返回的数据也涉及到敏感信息,所以对返回的数据也需要进行加密处理,最近做了一个解密的操作,用的是<code>AES+BASE64</code>算法,网上对于这类的加密算法还是蛮多的,这里推荐一篇文章 <a href="https://blog.csdn.net/qq_28205153/article/details/55798628" target="_blank" rel="noopener">AES加密算法的详细介绍与实现</a>.</p>
-<h5 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h5><p>搞懂了加密解密的实现是怎么一回事,已经成功了一大半,这里贴出一些核心代码,虽然代码量不多,但是做的过程是痛苦的,做出来之后在想想其实也没有那么复杂……这里推荐一篇文章帮助更好的理解AES. <a href="https://blog.csdn.net/vieri_32/article/details/48345023" target="_blank" rel="noopener">理解AES加密解密的使用方法</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">安装依赖</span><br><span class="line">npm install crypto-js</span><br><span class="line"></span><br><span class="line">function decrypt(data) &#123;</span><br><span class="line">    let key = CryptoJS.enc.Utf8.parse(&apos;key&apos;); // 秘钥</span><br><span class="line">    let baseResult=CryptoJS.enc.Base64.parse(data);</span><br><span class="line">    let ciphertext=CryptoJS.enc.Base64.stringify(baseResult);</span><br><span class="line"></span><br><span class="line">    let decrypted = CryptoJS.AES.decrypt(ciphertext, key, &#123; </span><br><span class="line">        mode: CryptoJS.mode.ECB,</span><br><span class="line">        padding: CryptoJS.pad.Pkcs7,</span><br><span class="line">    &#125;);</span><br><span class="line">    data = decrypted.toString(CryptoJS.enc.Utf8).toString();</span><br><span class="line">    return data;</span><br><span class="line">&#125;;</span><br><span class="line">调用:在返回的数据直接调用该方法即可.</span><br></pre></td></tr></table></figure></p>
-<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><p>在做的过程中遇到一个问题,前台传入的参数为中文或者特殊字符时,在传输过程中会做一些编码,后台在接收的时候需要对其进行重新编码才能够正确的拿到参数…</p>
-<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>关于加解密的方法还有很多,感兴趣的小伙伴们可以继续做一些深入的研究哈~</p>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全验证</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/26/encrypt-decrypt/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/12/28/essay/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          小分享
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/12/21/git-bisect/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git bisect 二分法快速定位问题代码</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#阐述"><span class="toc-number">1.</span> <span class="toc-text">阐述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#md5加密"><span class="toc-number">2.</span> <span class="toc-text">md5加密</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#crypto-js-aes-解密"><span class="toc-number">3.</span> <span class="toc-text">crypto-js aes 解密</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#背景"><span class="toc-number">3.1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#具体实现"><span class="toc-number">3.2.</span> <span class="toc-text">具体实现</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意点"><span class="toc-number">4.</span> <span class="toc-text">注意点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结语"><span class="toc-number">5.</span> <span class="toc-text">结语</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-  <div id="SOHUCS" sid="encrypt-decrypt" ></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: "true",
-        conf: "true"
-    });
-</script>
-</script>
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -365,8 +220,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

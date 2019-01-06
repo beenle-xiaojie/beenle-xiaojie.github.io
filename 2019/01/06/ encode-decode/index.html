@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>md5加密 + crypto-js aes解密 | 咕咕鸡不咕咕</title>
+  <title>js 编码解码 | 咕咕鸡不咕咕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阐述我们常常会遇到有关支付的问题,在支付的过程中,就会遇到支付安全性的问题,而有关于money的交易,安全措施做的再多也不为过,当然配置https服务那是必须的…… md5加密使用md5加密将参数和时间戳以及随机字符串拼接,按照字典序排序生成签名,放入头部传给后台; 那么问题来了? #1. 为什么要拼接时间戳和随机字符串呢? 答:是为了防止被重放攻击; #2. 按照字母序排序是为什么呢? 答: 防">
-<meta name="keywords" content="安全验证">
+  <meta name="description" content="前言URL的合法字符表示再浏览器的地址栏中不会被转义的字符，有两种： #1. URL元字符：分号（;），逗号（’,’），斜杠（/），问号（?），冒号（:），at（@），&amp;amp;，等号（=），加号（+），美元符号（$），井号（#） #2. 语义字符：a-z，A-Z，0-9，连词号（-），下划线（_），点（.），感叹号（!），波浪线（~），星号（*），单引号（），圆括号（()） 当输入的字符不符合以">
 <meta property="og:type" content="article">
-<meta property="og:title" content="md5加密 + crypto-js aes解密">
-<meta property="og:url" content="http://yoursite.com/2018/12/26/encrypt-decrypt/index.html">
+<meta property="og:title" content="js 编码解码">
+<meta property="og:url" content="http://yoursite.com/2019/01/06/ encode-decode/index.html">
 <meta property="og:site_name" content="咕咕鸡不咕咕">
-<meta property="og:description" content="阐述我们常常会遇到有关支付的问题,在支付的过程中,就会遇到支付安全性的问题,而有关于money的交易,安全措施做的再多也不为过,当然配置https服务那是必须的…… md5加密使用md5加密将参数和时间戳以及随机字符串拼接,按照字典序排序生成签名,放入头部传给后台; 那么问题来了? #1. 为什么要拼接时间戳和随机字符串呢? 答:是为了防止被重放攻击; #2. 按照字母序排序是为什么呢? 答: 防">
+<meta property="og:description" content="前言URL的合法字符表示再浏览器的地址栏中不会被转义的字符，有两种： #1. URL元字符：分号（;），逗号（’,’），斜杠（/），问号（?），冒号（:），at（@），&amp;amp;，等号（=），加号（+），美元符号（$），井号（#） #2. 语义字符：a-z，A-Z，0-9，连词号（-），下划线（_），点（.），感叹号（!），波浪线（~），星号（*），单引号（），圆括号（()） 当输入的字符不符合以">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-28T07:32:21.482Z">
+<meta property="og:updated_time" content="2019-01-06T09:39:58.027Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="md5加密 + crypto-js aes解密">
-<meta name="twitter:description" content="阐述我们常常会遇到有关支付的问题,在支付的过程中,就会遇到支付安全性的问题,而有关于money的交易,安全措施做的再多也不为过,当然配置https服务那是必须的…… md5加密使用md5加密将参数和时间戳以及随机字符串拼接,按照字典序排序生成签名,放入头部传给后台; 那么问题来了? #1. 为什么要拼接时间戳和随机字符串呢? 答:是为了防止被重放攻击; #2. 按照字母序排序是为什么呢? 答: 防">
+<meta name="twitter:title" content="js 编码解码">
+<meta name="twitter:description" content="前言URL的合法字符表示再浏览器的地址栏中不会被转义的字符，有两种： #1. URL元字符：分号（;），逗号（’,’），斜杠（/），问号（?），冒号（:），at（@），&amp;amp;，等号（=），加号（+），美元符号（$），井号（#） #2. 语义字符：a-z，A-Z，0-9，连词号（-），下划线（_），点（.），感叹号（!），波浪线（~），星号（*），单引号（），圆括号（()） 当输入的字符不符合以">
   
     <link rel="alternative" href="/atom.xml" title="咕咕鸡不咕咕" type="application/atom+xml">
   
@@ -147,38 +146,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-encrypt-decrypt" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post- encode-decode" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      md5加密 + crypto-js aes解密
+      js 编码解码
     </h1>
   
 
         
-        <a href="/2018/12/26/encrypt-decrypt/" class="archive-article-date">
-  	<time datetime="2018-12-26T09:01:24.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-26</time>
+        <a href="/2019/01/06/ encode-decode/" class="archive-article-date">
+  	<time datetime="2019-01-06T09:38:20.924Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="阐述"><a href="#阐述" class="headerlink" title="阐述"></a>阐述</h4><p>我们常常会遇到有关支付的问题,在支付的过程中,就会遇到支付安全性的问题,而有关于money的交易,安全措施做的再多也不为过,当然配置https服务那是必须的……</p>
-<h4 id="md5加密"><a href="#md5加密" class="headerlink" title="md5加密"></a>md5加密</h4><p>使用<code>md5</code>加密将参数和时间戳以及随机字符串拼接,按照字典序排序生成签名,放入头部传给后台;</p>
-<p>那么问题来了?</p>
-<p>#1. 为什么要拼接时间戳和随机字符串呢?</p>
-<p>答:是为了防止被重放攻击;</p>
-<p>#2. 按照字母序排序是为什么呢?</p>
-<p>答: 防止参数乱序之后，造成加密不一致的问题;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">安装依赖,也可以直接引入js库</span><br><span class="line">npm install md5</span><br><span class="line">生成签名过程,假设前台传入的参数都是object,若参数为字符串,则需另加判断</span><br><span class="line">//参数处理</span><br><span class="line">function A(params) &#123;</span><br><span class="line">    if (typeof params === &apos;object&apos;) &#123;</span><br><span class="line">        var arr = [];</span><br><span class="line">        for (var i in params) &#123;</span><br><span class="line">            if(!(params[i] === null || params[i] === &apos;&apos; || params[i] === undefined))&#123;</span><br><span class="line">                arr.push(i + &apos;=&apos; + (</span><br><span class="line">                    typeof params[i] === &apos;object&apos; ? JSON.stringify(params[i]) : params[i]</span><br><span class="line">                ));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return this.paramsStrSort(arr.join((&apos;&amp;&apos;)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">//生成签名</span><br><span class="line">function B(paramsStr) &#123;</span><br><span class="line">    let tmp = paramsStr + &apos;&amp;c=&apos; + c + &apos;&amp;d=&apos; + d;//c,d为时间戳和随机字符串</span><br><span class="line">    let str = _.split(tmp, &apos;&amp;&apos;).sort().join(&apos;&amp;&apos;);</span><br><span class="line">    let newStr = str + &apos;&amp;key=&apos; + secret;//secret为常量,由后端定义好</span><br><span class="line">    return md5(newStr);</span><br><span class="line">&#125;,</span><br><span class="line">调用过程</span><br><span class="line">paramsObj = &#123; xid: xid, pageSize: pageSize, type: type, pageNo: pageNo &#125;;</span><br><span class="line">sign = getSign(paramsObj);</span><br></pre></td></tr></table></figure>
-<h4 id="crypto-js-aes-解密"><a href="#crypto-js-aes-解密" class="headerlink" title="crypto-js aes 解密"></a>crypto-js aes 解密</h4><h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><p>返回的数据也涉及到敏感信息,所以对返回的数据也需要进行加密处理,最近做了一个解密的操作,用的是<code>AES+BASE64</code>算法,网上对于这类的加密算法还是蛮多的,这里推荐一篇文章 <a href="https://blog.csdn.net/qq_28205153/article/details/55798628" target="_blank" rel="noopener">AES加密算法的详细介绍与实现</a>.</p>
-<h5 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h5><p>搞懂了加密解密的实现是怎么一回事,已经成功了一大半,这里贴出一些核心代码,虽然代码量不多,但是做的过程是痛苦的,做出来之后在想想其实也没有那么复杂……这里推荐一篇文章帮助更好的理解AES. <a href="https://blog.csdn.net/vieri_32/article/details/48345023" target="_blank" rel="noopener">理解AES加密解密的使用方法</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">安装依赖</span><br><span class="line">npm install crypto-js</span><br><span class="line"></span><br><span class="line">function decrypt(data) &#123;</span><br><span class="line">    let key = CryptoJS.enc.Utf8.parse(&apos;key&apos;); // 秘钥</span><br><span class="line">    let baseResult=CryptoJS.enc.Base64.parse(data);</span><br><span class="line">    let ciphertext=CryptoJS.enc.Base64.stringify(baseResult);</span><br><span class="line"></span><br><span class="line">    let decrypted = CryptoJS.AES.decrypt(ciphertext, key, &#123; </span><br><span class="line">        mode: CryptoJS.mode.ECB,</span><br><span class="line">        padding: CryptoJS.pad.Pkcs7,</span><br><span class="line">    &#125;);</span><br><span class="line">    data = decrypted.toString(CryptoJS.enc.Utf8).toString();</span><br><span class="line">    return data;</span><br><span class="line">&#125;;</span><br><span class="line">调用:在返回的数据直接调用该方法即可.</span><br></pre></td></tr></table></figure></p>
-<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><p>在做的过程中遇到一个问题,前台传入的参数为中文或者特殊字符时,在传输过程中会做一些编码,后台在接收的时候需要对其进行重新编码才能够正确的拿到参数…</p>
-<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>关于加解密的方法还有很多,感兴趣的小伙伴们可以继续做一些深入的研究哈~</p>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>URL的合法字符表示再浏览器的地址栏中不会被转义的字符，有两种：</p>
+<p>#1. URL元字符：分号（;），逗号（’,’），斜杠（/），问号（?），冒号（:），at（@），&amp;，等号（=），加号（+），美元符号（$），井号（#）</p>
+<p>#2. 语义字符：a-z，A-Z，0-9，连词号（-），下划线（_），点（.），感叹号（!），波浪线（~），星号（*），单引号（），圆括号（()）</p>
+<p>当输入的字符不符合以上的字符时，浏览器就会把该字符转义.</p>
+<p>转义规则: 根据操作系统的默认编码，将每个字节转为百分号（%）加上两个大写的十六进制字母。<br>比如: 当再浏览器地址栏中输入     <code>www.baidu.com/q=你好</code>时,会被转义成例如 <code>www.baidu.com/q=%E6%98%A5%E8%8A%82</code>类似的字符串，浏览器才会读取。</p>
+<h5 id="1-encodeURI"><a href="#1-encodeURI" class="headerlink" title="1. encodeURI"></a>1. encodeURI</h5><p><strong>定义和用法</strong></p>
+<p>encodeURI() 函数可把字符串作为 URI 进行编码。</p>
+<p><strong>说明:</strong></p>
+<p>该方法不会对<code>ASCII</code>字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。</p>
+<p>该方法的目的是对 URI 进行完整的编码，因此对以下在 URI 中具有特殊含义的 ASCII 标点符号，encodeURI() 函数是不会进行转义的：;/?:@&amp;=+$,#</p>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; encodeURI(&quot;http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;&quot;)</span><br><span class="line">&gt; http://www.baidu.com:8080:public/a=%E5%B0%8F%E7%8E%89&amp;b=%3C%3E</span><br></pre></td></tr></table></figure>
+<h5 id="2-encodeURIComponent"><a href="#2-encodeURIComponent" class="headerlink" title="2. encodeURIComponent"></a>2. encodeURIComponent</h5><p><strong>定义和用法</strong></p>
+<p>和encodeURI一样,encodeURIComponent() 函数可把字符串作为 URI 组件进行编码。</p>
+<p><strong>说明</strong></p>
+<p>该方法不会对 ASCII 字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。</p>
+<p>其他字符（比如 ：;/?:@&amp;=+$,# 这些用于分隔 URI 组件的标点符号），都是由一个或多个十六进制的转义序列替换的。</p>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; encodeURI(&quot;http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;&quot;)</span><br><span class="line">&gt; http%3A%2F%2Fwww.baidu.com%3A8080%3Apublic%2Fa%3D%E5%B0%8F%E7%8E%89%26b%3D%3C%3E</span><br></pre></td></tr></table></figure>
+<h5 id="3-decodeURI"><a href="#3-decodeURI" class="headerlink" title="3. decodeURI"></a>3. decodeURI</h5><p><strong>定义和用法</strong></p>
+<p>顾名思义,decodeURI() 函数可对 encodeURI() 函数编码过的 URI 进行解码。</p>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; decodeURI(&quot;http://www.baidu.com:8080:public/a=%E5%B0%8F%E7%8E%89&amp;b=%3C%3E&quot;)</span><br><span class="line">&gt; http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="4-decodeURIComponent"><a href="#4-decodeURIComponent" class="headerlink" title="4. decodeURIComponent"></a>4. decodeURIComponent</h5><p><strong>定义和用法</strong></p>
+<p>顾名思义,decodeURIComponent() 函数可对 encodeURIComponent() 函数编码过的 URI 进行解码。</p>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; decodeURI(&quot;http%3A%2F%2Fwww.baidu.com%3A8080%3Apublic%2Fa%3D%E5%B0%8F%E7%8E%89%26b%3D%3C%3E&quot;)</span><br><span class="line">&gt; http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="5-escape"><a href="#5-escape" class="headerlink" title="5. escape"></a>5. escape</h5><p><strong>定义和用法</strong></p>
+<p>escape() 函数可对字符串进行编码，这样就可以在所有的计算机上读取该字符串。</p>
+<p><strong>说明</strong></p>
+<p>该方法不会对 ASCII 字母和数字进行编码，也不会对下面这些 ASCII 标点符号进行编码： * @ - _ + . / 。其他所有的字符都会被转义序列替换。</p>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; escape(&quot;*123小玉@#$()8&quot;)</span><br><span class="line">&gt; *123%u5C0F%u7389@%23%24%28%298</span><br></pre></td></tr></table></figure>
+<h5 id="6-unescape"><a href="#6-unescape" class="headerlink" title="6. unescape"></a>6. unescape</h5><p><strong>定义和用法</strong></p>
+<p>unescape() 函数可对通过 escape() 编码的字符串进行解码。</p>
+<p><strong>说明</strong></p>
+<p>该函数的工作原理是这样的：通过找到形式为 %xx 和 %uxxxx 的字符序列（x 表示十六进制的数字），用 Unicode 字符 \u00xx 和 \uxxxx 替换这样的字符序列进行解码。</p>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; escape(&quot;*123%u5C0F%u7389@%23%24%28%298&quot;)</span><br><span class="line">&gt; *123小玉@#$()8&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="提示和注释"><a href="#提示和注释" class="headerlink" title="提示和注释"></a>提示和注释</h4><p>ECMAScript v3 并反对使用<code>unescape</code>和<code>escape</code>，因此应该用 <code>decodeURI()</code> 或<code>ecodeURI()</code> 和 <code>decodeURIComponent()</code> 或<code>ecodeURIComponent()</code> 取而代之。</p>
+<h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h5><p>#1. 本文参照<code>w3c</code>;</p>
+<p>#2. <a href="https://www.jianshu.com/p/b2c6dc5fad0a" target="_blank" rel="noopener">前端编码解码</a></p>
 
       
 
@@ -187,17 +216,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全验证</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -248,7 +266,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/26/encrypt-decrypt/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/06/ encode-decode/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -262,18 +280,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/28/essay/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          小分享
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/21/git-bisect/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git bisect 二分法快速定位问题代码</div>
+    <a href="/2018/12/28/essay/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">小分享</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -300,7 +309,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#阐述"><span class="toc-number">1.</span> <span class="toc-text">阐述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#md5加密"><span class="toc-number">2.</span> <span class="toc-text">md5加密</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#crypto-js-aes-解密"><span class="toc-number">3.</span> <span class="toc-text">crypto-js aes 解密</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#背景"><span class="toc-number">3.1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#具体实现"><span class="toc-number">3.2.</span> <span class="toc-text">具体实现</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意点"><span class="toc-number">4.</span> <span class="toc-text">注意点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结语"><span class="toc-number">5.</span> <span class="toc-text">结语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-encodeURI"><span class="toc-number">1.1.</span> <span class="toc-text">1. encodeURI</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-encodeURIComponent"><span class="toc-number">1.2.</span> <span class="toc-text">2. encodeURIComponent</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-decodeURI"><span class="toc-number">1.3.</span> <span class="toc-text">3. decodeURI</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-decodeURIComponent"><span class="toc-number">1.4.</span> <span class="toc-text">4. decodeURIComponent</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-escape"><span class="toc-number">1.5.</span> <span class="toc-text">5. escape</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-unescape"><span class="toc-number">1.6.</span> <span class="toc-text">6. unescape</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#提示和注释"><span class="toc-number">2.</span> <span class="toc-text">提示和注释</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考文章"><span class="toc-number">2.1.</span> <span class="toc-text">参考文章</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -316,7 +325,7 @@
   
 
   
-  <div id="SOHUCS" sid="encrypt-decrypt" ></div> 
+  <div id="SOHUCS" sid=" encode-decode" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
