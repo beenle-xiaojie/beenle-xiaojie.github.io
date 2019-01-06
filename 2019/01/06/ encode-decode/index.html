@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>js 编码解码 | 咕咕鸡不咕咕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言URL的合法字符表示再浏览器的地址栏中不会被转义的字符，有两种： #1. URL元字符：分号（;），逗号（’,’），斜杠（/），问号（?），冒号（:），at（@），&amp;amp;，等号（=），加号（+），美元符号（$），井号（#） #2. 语义字符：a-z，A-Z，0-9，连词号（-），下划线（_），点（.），感叹号（!），波浪线（~），星号（*），单引号（），圆括号（()） 当输入的字符不符合以">
+  <meta name="description" content="前言URL的合法字符表示再浏览器的地址栏中不会被转义的字符，有两种: #1. URL元字符：分号（;），逗号（’,’），斜杠（/），问号（?），冒号（:），at（@），&amp;amp;，等号（=），加号（+），美元符号（$），井号（#） #2. 语义字符：a-z，A-Z，0-9，连词号（-），下划线（_），点（.），感叹号（!），波浪线（~），星号（*），单引号（），圆括号（()）当输入的字符不符合以上">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js 编码解码">
 <meta property="og:url" content="http://yoursite.com/2019/01/06/ encode-decode/index.html">
 <meta property="og:site_name" content="咕咕鸡不咕咕">
-<meta property="og:description" content="前言URL的合法字符表示再浏览器的地址栏中不会被转义的字符，有两种： #1. URL元字符：分号（;），逗号（’,’），斜杠（/），问号（?），冒号（:），at（@），&amp;amp;，等号（=），加号（+），美元符号（$），井号（#） #2. 语义字符：a-z，A-Z，0-9，连词号（-），下划线（_），点（.），感叹号（!），波浪线（~），星号（*），单引号（），圆括号（()） 当输入的字符不符合以">
+<meta property="og:description" content="前言URL的合法字符表示再浏览器的地址栏中不会被转义的字符，有两种: #1. URL元字符：分号（;），逗号（’,’），斜杠（/），问号（?），冒号（:），at（@），&amp;amp;，等号（=），加号（+），美元符号（$），井号（#） #2. 语义字符：a-z，A-Z，0-9，连词号（-），下划线（_），点（.），感叹号（!），波浪线（~），星号（*），单引号（），圆括号（()）当输入的字符不符合以上">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-06T09:39:58.027Z">
+<meta property="og:updated_time" content="2019-01-06T09:45:13.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js 编码解码">
-<meta name="twitter:description" content="前言URL的合法字符表示再浏览器的地址栏中不会被转义的字符，有两种： #1. URL元字符：分号（;），逗号（’,’），斜杠（/），问号（?），冒号（:），at（@），&amp;amp;，等号（=），加号（+），美元符号（$），井号（#） #2. 语义字符：a-z，A-Z，0-9，连词号（-），下划线（_），点（.），感叹号（!），波浪线（~），星号（*），单引号（），圆括号（()） 当输入的字符不符合以">
+<meta name="twitter:description" content="前言URL的合法字符表示再浏览器的地址栏中不会被转义的字符，有两种: #1. URL元字符：分号（;），逗号（’,’），斜杠（/），问号（?），冒号（:），at（@），&amp;amp;，等号（=），加号（+），美元符号（$），井号（#） #2. 语义字符：a-z，A-Z，0-9，连词号（-），下划线（_），点（.），感叹号（!），波浪线（~），星号（*），单引号（），圆括号（()）当输入的字符不符合以上">
   
     <link rel="alternative" href="/atom.xml" title="咕咕鸡不咕咕" type="application/atom+xml">
   
@@ -166,45 +166,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>URL的合法字符表示再浏览器的地址栏中不会被转义的字符，有两种：</p>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>URL的合法字符表示再浏览器的地址栏中不会被转义的字符，有两种:</p>
 <p>#1. URL元字符：分号（;），逗号（’,’），斜杠（/），问号（?），冒号（:），at（@），&amp;，等号（=），加号（+），美元符号（$），井号（#）</p>
-<p>#2. 语义字符：a-z，A-Z，0-9，连词号（-），下划线（_），点（.），感叹号（!），波浪线（~），星号（*），单引号（），圆括号（()）</p>
-<p>当输入的字符不符合以上的字符时，浏览器就会把该字符转义.</p>
-<p>转义规则: 根据操作系统的默认编码，将每个字节转为百分号（%）加上两个大写的十六进制字母。<br>比如: 当再浏览器地址栏中输入     <code>www.baidu.com/q=你好</code>时,会被转义成例如 <code>www.baidu.com/q=%E6%98%A5%E8%8A%82</code>类似的字符串，浏览器才会读取。</p>
-<h5 id="1-encodeURI"><a href="#1-encodeURI" class="headerlink" title="1. encodeURI"></a>1. encodeURI</h5><p><strong>定义和用法</strong></p>
-<p>encodeURI() 函数可把字符串作为 URI 进行编码。</p>
-<p><strong>说明:</strong></p>
-<p>该方法不会对<code>ASCII</code>字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。</p>
-<p>该方法的目的是对 URI 进行完整的编码，因此对以下在 URI 中具有特殊含义的 ASCII 标点符号，encodeURI() 函数是不会进行转义的：;/?:@&amp;=+$,#</p>
-<p><strong>示例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; encodeURI(&quot;http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;&quot;)</span><br><span class="line">&gt; http://www.baidu.com:8080:public/a=%E5%B0%8F%E7%8E%89&amp;b=%3C%3E</span><br></pre></td></tr></table></figure>
-<h5 id="2-encodeURIComponent"><a href="#2-encodeURIComponent" class="headerlink" title="2. encodeURIComponent"></a>2. encodeURIComponent</h5><p><strong>定义和用法</strong></p>
-<p>和encodeURI一样,encodeURIComponent() 函数可把字符串作为 URI 组件进行编码。</p>
-<p><strong>说明</strong></p>
-<p>该方法不会对 ASCII 字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。</p>
-<p>其他字符（比如 ：;/?:@&amp;=+$,# 这些用于分隔 URI 组件的标点符号），都是由一个或多个十六进制的转义序列替换的。</p>
-<p><strong>示例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; encodeURI(&quot;http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;&quot;)</span><br><span class="line">&gt; http%3A%2F%2Fwww.baidu.com%3A8080%3Apublic%2Fa%3D%E5%B0%8F%E7%8E%89%26b%3D%3C%3E</span><br></pre></td></tr></table></figure>
-<h5 id="3-decodeURI"><a href="#3-decodeURI" class="headerlink" title="3. decodeURI"></a>3. decodeURI</h5><p><strong>定义和用法</strong></p>
-<p>顾名思义,decodeURI() 函数可对 encodeURI() 函数编码过的 URI 进行解码。</p>
-<p><strong>示例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; decodeURI(&quot;http://www.baidu.com:8080:public/a=%E5%B0%8F%E7%8E%89&amp;b=%3C%3E&quot;)</span><br><span class="line">&gt; http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="4-decodeURIComponent"><a href="#4-decodeURIComponent" class="headerlink" title="4. decodeURIComponent"></a>4. decodeURIComponent</h5><p><strong>定义和用法</strong></p>
-<p>顾名思义,decodeURIComponent() 函数可对 encodeURIComponent() 函数编码过的 URI 进行解码。</p>
-<p><strong>示例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; decodeURI(&quot;http%3A%2F%2Fwww.baidu.com%3A8080%3Apublic%2Fa%3D%E5%B0%8F%E7%8E%89%26b%3D%3C%3E&quot;)</span><br><span class="line">&gt; http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="5-escape"><a href="#5-escape" class="headerlink" title="5. escape"></a>5. escape</h5><p><strong>定义和用法</strong></p>
-<p>escape() 函数可对字符串进行编码，这样就可以在所有的计算机上读取该字符串。</p>
-<p><strong>说明</strong></p>
-<p>该方法不会对 ASCII 字母和数字进行编码，也不会对下面这些 ASCII 标点符号进行编码： * @ - _ + . / 。其他所有的字符都会被转义序列替换。</p>
-<p><strong>示例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; escape(&quot;*123小玉@#$()8&quot;)</span><br><span class="line">&gt; *123%u5C0F%u7389@%23%24%28%298</span><br></pre></td></tr></table></figure>
-<h5 id="6-unescape"><a href="#6-unescape" class="headerlink" title="6. unescape"></a>6. unescape</h5><p><strong>定义和用法</strong></p>
-<p>unescape() 函数可对通过 escape() 编码的字符串进行解码。</p>
-<p><strong>说明</strong></p>
-<p>该函数的工作原理是这样的：通过找到形式为 %xx 和 %uxxxx 的字符序列（x 表示十六进制的数字），用 Unicode 字符 \u00xx 和 \uxxxx 替换这样的字符序列进行解码。</p>
-<p><strong>示例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; escape(&quot;*123%u5C0F%u7389@%23%24%28%298&quot;)</span><br><span class="line">&gt; *123小玉@#$()8&quot;</span><br></pre></td></tr></table></figure>
+<p>#2. 语义字符：a-z，A-Z，0-9，连词号（-），下划线（_），点（.），感叹号（!），波浪线（~），星号（*），单引号（），圆括号（()）<br>当输入的字符不符合以上的字符时，浏览器就会把该字符转义.<br>转义规则: 根据操作系统的默认编码，将每个字节转为百分号（%）加上两个大写的十六进制字母。<br>比如: 当再浏览器地址栏中输入     <code>www.baidu.com/q=你好</code>时,会被转义成例如 <code>www.baidu.com/q=%E6%98%A5%E8%8A%82</code>类似的字符串，浏览器才会读取。</p>
+<h5 id="1-encodeURI"><a href="#1-encodeURI" class="headerlink" title="1. encodeURI"></a>1. encodeURI</h5><p><strong>定义和用法</strong><br>encodeURI() 函数可把字符串作为 URI 进行编码。</p>
+<p><strong>说明:</strong><br>该方法不会对<code>ASCII</code>字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。<br>该方法的目的是对 URI 进行完整的编码，因此对以下在 URI 中具有特殊含义的 ASCII 标点符号，encodeURI() 函数是不会进行转义的：;/?:@&amp;=+$,#</p>
+<p><strong>示例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; encodeURI(&quot;http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;&quot;)</span><br><span class="line">&gt; http://www.baidu.com:8080:public/a=%E5%B0%8F%E7%8E%89&amp;b=%3C%3E</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-encodeURIComponent"><a href="#2-encodeURIComponent" class="headerlink" title="2. encodeURIComponent"></a>2. encodeURIComponent</h5><p><strong>定义和用法</strong><br>和encodeURI一样,encodeURIComponent() 函数可把字符串作为 URI 组件进行编码。</p>
+<p><strong>说明</strong><br>该方法不会对 ASCII 字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。<br>其他字符（比如 ：;/?:@&amp;=+$,# 这些用于分隔 URI 组件的标点符号），都是由一个或多个十六进制的转义序列替换的。</p>
+<p><strong>示例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; encodeURI(&quot;http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;&quot;)</span><br><span class="line">&gt; http%3A%2F%2Fwww.baidu.com%3A8080%3Apublic%2Fa%3D%E5%B0%8F%E7%8E%89%26b%3D%3C%3E</span><br></pre></td></tr></table></figure></p>
+<h5 id="3-decodeURI"><a href="#3-decodeURI" class="headerlink" title="3. decodeURI"></a>3. decodeURI</h5><p><strong>定义和用法</strong><br>顾名思义,decodeURI() 函数可对 encodeURI() 函数编码过的 URI 进行解码。</p>
+<p><strong>示例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; decodeURI(&quot;http://www.baidu.com:8080:public/a=%E5%B0%8F%E7%8E%89&amp;b=%3C%3E&quot;)</span><br><span class="line">&gt; http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="4-decodeURIComponent"><a href="#4-decodeURIComponent" class="headerlink" title="4. decodeURIComponent"></a>4. decodeURIComponent</h5><p><strong>定义和用法</strong><br>顾名思义,decodeURIComponent() 函数可对 encodeURIComponent() 函数编码过的 URI 进行解码。</p>
+<p><strong>示例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; decodeURI(&quot;http%3A%2F%2Fwww.baidu.com%3A8080%3Apublic%2Fa%3D%E5%B0%8F%E7%8E%89%26b%3D%3C%3E&quot;)</span><br><span class="line">&gt; http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="5-escape"><a href="#5-escape" class="headerlink" title="5. escape"></a>5. escape</h5><p><strong>定义和用法</strong><br>escape() 函数可对字符串进行编码，这样就可以在所有的计算机上读取该字符串。</p>
+<p><strong>说明</strong><br>该方法不会对 ASCII 字母和数字进行编码，也不会对下面这些 ASCII 标点符号进行编码： * @ - _ + . / 。其他所有的字符都会被转义序列替换。</p>
+<p><strong>示例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; escape(&quot;*123小玉@#$()8&quot;)</span><br><span class="line">&gt; *123%u5C0F%u7389@%23%24%28%298</span><br></pre></td></tr></table></figure></p>
+<h5 id="6-unescape"><a href="#6-unescape" class="headerlink" title="6. unescape"></a>6. unescape</h5><p><strong>定义和用法</strong><br>unescape() 函数可对通过 escape() 编码的字符串进行解码。</p>
+<p><strong>说明</strong><br>该函数的工作原理是这样的：通过找到形式为 %xx 和 %uxxxx 的字符序列（x 表示十六进制的数字），用 Unicode 字符 \u00xx 和 \uxxxx 替换这样的字符序列进行解码。</p>
+<p><strong>示例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; escape(&quot;*123%u5C0F%u7389@%23%24%28%298&quot;)</span><br><span class="line">&gt; *123小玉@#$()8&quot;</span><br></pre></td></tr></table></figure></p>
 <h4 id="提示和注释"><a href="#提示和注释" class="headerlink" title="提示和注释"></a>提示和注释</h4><p>ECMAScript v3 并反对使用<code>unescape</code>和<code>escape</code>，因此应该用 <code>decodeURI()</code> 或<code>ecodeURI()</code> 和 <code>decodeURIComponent()</code> 或<code>ecodeURIComponent()</code> 取而代之。</p>
 <h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h5><p>#1. 本文参照<code>w3c</code>;</p>
 <p>#2. <a href="https://www.jianshu.com/p/b2c6dc5fad0a" target="_blank" rel="noopener">前端编码解码</a></p>
@@ -436,11 +416,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安全验证</a>
+                <a href="javascript:void(0)" class="js-tag color3">部署</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">部署</a>
+                <a href="javascript:void(0)" class="js-tag color5">安全验证</a>
               </li>
              
               <li class="article-tag-list-item">
