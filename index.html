@@ -144,6 +144,97 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ClickJacking" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/07/ClickJacking/">点击劫持ClickJacking</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/07/ClickJacking/" class="archive-article-date">
+  	<time datetime="2019-01-07T10:16:27.782Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h5><p>当我们的页面嵌入到一个iframe中时，安全测试提出一个于我而言很新鲜的词汇–<code>点击劫持</code>,会造成安全隐患。</p>
+<h5 id="1-什么是点击劫持？"><a href="#1-什么是点击劫持？" class="headerlink" title="1. 什么是点击劫持？"></a>1. 什么是点击劫持？</h5><p>点击劫持（ClickJacking）是一种视觉上的欺骗手段。大概有两种方式，一是攻击者使用一个透明的iframe，覆盖在一个网页上，然后诱使用户在该页面上进行操作，此时用户将在不知情的情况下点击透明的iframe页面；二是攻击者使用一张图片覆盖在网页，遮挡网页原有位置的含义；</p>
+<p>简单的说，就是用户点击了一个按钮，但是触发的操作不是正常期待的事件，而是触发了别的非意愿操作…</p>
+<h5 id="2-解决办法"><a href="#2-解决办法" class="headerlink" title="2. 解决办法"></a>2. 解决办法</h5><p>X-Frame-Options 响应头配置避免点击劫持攻击</p>
+<p><strong>原理：</strong><br>X-Frame-Options HTTP响应头是用来给浏览器指示允许一个页面可否在<code>&lt;frame&gt;</code>,<code>&lt;iframe&gt;</code>或者<code>&lt;object&gt;</code>中展现的标记。网站可以使用此功能，来确保自己网站的内容没有被嵌到别人的网站中去，也从而避免了点击劫持 (clickjacking) 的攻击。</p>
+<p>X-Frame-Options有三种可配置值，（属性值不区分大小写）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">X-Frame-Options: DENY</span><br><span class="line">X-Frame-Options: SAMEORIGIN</span><br><span class="line">X-Frame-Options: ALLOW-FROM</span><br></pre></td></tr></table></figure>
+<p><strong>指令</strong><br>如果指定DENY，从其他站点加载时，不仅尝试在框架中加载页面失败，从同一站点加载时尝试这样做将失败。另一方面，如果指定SAMEORIGIN，只要包含在框架中的站点与为页面提供服务的站点相同，仍然可以在框架中使用该页面。</p>
+<p>DENY无论站点尝试这样做，页面都不能显示在框架中。SAMEORIGIN该页面只能显示在与页面本身相同的源框架中。ALLOW-FROM_ uri_页面只能显示在指定原点的框架中。</p>
+<p>当前项目是部署在<code>nginx</code>上的，那就以<code>nginx</code>为例来做个配置，除此还可以配置在 <code>Apache</code>,<code>IIS</code>等。</p>
+<p><strong>配置过程：</strong></p>
+<p>#1. 在nginx下 /opt/nginx/conf.d/example.conf下写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add_header X-Frame-Options &quot;allow-from https://example.com/&quot;;</span><br><span class="line">也可以直接写域名</span><br><span class="line">add_header X-Frame-Options &quot;allow-from example.com/&quot;;</span><br></pre></td></tr></table></figure>
+<p>#2. 踩坑</p>
+<p>发现在chrome下会报错，报错信息如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Invalid &apos;X-Frame-Options&apos; header encountered when loading &apos;example.com:8081/app.html&apos;: &apos;allow-from example.com/&apos; is not a recognized directive. The header will be ignored.</span><br></pre></td></tr></table></figure>
+<p>经过排查发现是在Chrome和Safari要使用Content-Security-Policy参数</p>
+<p>#3. 设置用Content-Security-Policy</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_header Content-Security-Policy &quot;frame-ancestors example.com&quot;;</span><br></pre></td></tr></table></figure>
+<h5 id="3-参考链接"><a href="#3-参考链接" class="headerlink" title="3. 参考链接"></a>3. 参考链接</h5><p><a href="https://www.jianshu.com/p/251704d8ff18" target="_blank" rel="noopener">web安全之–点击劫持攻击与防御技术简介</a></p>
+<p><a href="https://www.zhuyingda.com/blog/b6.html?origin=75" target="_blank" rel="noopener">ClickJacking漏洞的原理</a></p>
+<h5 id="4-相关知识点"><a href="#4-相关知识点" class="headerlink" title="4. 相关知识点"></a>4. 相关知识点</h5><p>防盗链攻击</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全验证</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-encode-decode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -832,11 +923,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">部署</a>
+                <a href="javascript:void(0)" class="js-tag color5">安全验证</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安全验证</a>
+                <a href="javascript:void(0)" class="js-tag color3">部署</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -844,11 +935,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git 命令使用</a>
+                <a href="javascript:void(0)" class="js-tag color2">前端必知技能</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">前端必知技能</a>
+                <a href="javascript:void(0)" class="js-tag color4">git 命令使用</a>
               </li>
             
             <div class="clearfix"></div>

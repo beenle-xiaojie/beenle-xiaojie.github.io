@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>md5加密 + crypto-js aes解密 | 咕咕鸡不咕咕</title>
+  <title>点击劫持ClickJacking | 咕咕鸡不咕咕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阐述我们常常会遇到有关支付的问题,在支付的过程中,就会遇到支付安全性的问题,而有关于money的交易,安全措施做的再多也不为过,当然配置https服务那是必须的…… md5加密使用md5加密将参数和时间戳以及随机字符串拼接,按照字典序排序生成签名,放入头部传给后台; 那么问题来了? #1. 为什么要拼接时间戳和随机字符串呢? 答:是为了防止被重放攻击; #2. 按照字母序排序是为什么呢? 答: 防">
+  <meta name="description" content="引言当我们的页面嵌入到一个iframe中时，安全测试提出一个于我而言很新鲜的词汇–点击劫持,会造成安全隐患。 1. 什么是点击劫持？点击劫持（ClickJacking）是一种视觉上的欺骗手段。大概有两种方式，一是攻击者使用一个透明的iframe，覆盖在一个网页上，然后诱使用户在该页面上进行操作，此时用户将在不知情的情况下点击透明的iframe页面；二是攻击者使用一张图片覆盖在网页，遮挡网页原有位置">
 <meta name="keywords" content="安全验证">
 <meta property="og:type" content="article">
-<meta property="og:title" content="md5加密 + crypto-js aes解密">
-<meta property="og:url" content="http://yoursite.com/2018/12/26/encrypt-decrypt/index.html">
+<meta property="og:title" content="点击劫持ClickJacking">
+<meta property="og:url" content="http://yoursite.com/2019/01/07/ClickJacking/index.html">
 <meta property="og:site_name" content="咕咕鸡不咕咕">
-<meta property="og:description" content="阐述我们常常会遇到有关支付的问题,在支付的过程中,就会遇到支付安全性的问题,而有关于money的交易,安全措施做的再多也不为过,当然配置https服务那是必须的…… md5加密使用md5加密将参数和时间戳以及随机字符串拼接,按照字典序排序生成签名,放入头部传给后台; 那么问题来了? #1. 为什么要拼接时间戳和随机字符串呢? 答:是为了防止被重放攻击; #2. 按照字母序排序是为什么呢? 答: 防">
+<meta property="og:description" content="引言当我们的页面嵌入到一个iframe中时，安全测试提出一个于我而言很新鲜的词汇–点击劫持,会造成安全隐患。 1. 什么是点击劫持？点击劫持（ClickJacking）是一种视觉上的欺骗手段。大概有两种方式，一是攻击者使用一个透明的iframe，覆盖在一个网页上，然后诱使用户在该页面上进行操作，此时用户将在不知情的情况下点击透明的iframe页面；二是攻击者使用一张图片覆盖在网页，遮挡网页原有位置">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-28T07:32:21.482Z">
+<meta property="og:updated_time" content="2019-01-07T10:17:36.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="md5加密 + crypto-js aes解密">
-<meta name="twitter:description" content="阐述我们常常会遇到有关支付的问题,在支付的过程中,就会遇到支付安全性的问题,而有关于money的交易,安全措施做的再多也不为过,当然配置https服务那是必须的…… md5加密使用md5加密将参数和时间戳以及随机字符串拼接,按照字典序排序生成签名,放入头部传给后台; 那么问题来了? #1. 为什么要拼接时间戳和随机字符串呢? 答:是为了防止被重放攻击; #2. 按照字母序排序是为什么呢? 答: 防">
+<meta name="twitter:title" content="点击劫持ClickJacking">
+<meta name="twitter:description" content="引言当我们的页面嵌入到一个iframe中时，安全测试提出一个于我而言很新鲜的词汇–点击劫持,会造成安全隐患。 1. 什么是点击劫持？点击劫持（ClickJacking）是一种视觉上的欺骗手段。大概有两种方式，一是攻击者使用一个透明的iframe，覆盖在一个网页上，然后诱使用户在该页面上进行操作，此时用户将在不知情的情况下点击透明的iframe页面；二是攻击者使用一张图片覆盖在网页，遮挡网页原有位置">
   
     <link rel="alternative" href="/atom.xml" title="咕咕鸡不咕咕" type="application/atom+xml">
   
@@ -147,38 +147,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-encrypt-decrypt" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ClickJacking" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      md5加密 + crypto-js aes解密
+      点击劫持ClickJacking
     </h1>
   
 
         
-        <a href="/2018/12/26/encrypt-decrypt/" class="archive-article-date">
-  	<time datetime="2018-12-26T09:01:24.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-26</time>
+        <a href="/2019/01/07/ClickJacking/" class="archive-article-date">
+  	<time datetime="2019-01-07T10:16:27.782Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="阐述"><a href="#阐述" class="headerlink" title="阐述"></a>阐述</h4><p>我们常常会遇到有关支付的问题,在支付的过程中,就会遇到支付安全性的问题,而有关于money的交易,安全措施做的再多也不为过,当然配置https服务那是必须的……</p>
-<h4 id="md5加密"><a href="#md5加密" class="headerlink" title="md5加密"></a>md5加密</h4><p>使用<code>md5</code>加密将参数和时间戳以及随机字符串拼接,按照字典序排序生成签名,放入头部传给后台;</p>
-<p>那么问题来了?</p>
-<p>#1. 为什么要拼接时间戳和随机字符串呢?</p>
-<p>答:是为了防止被重放攻击;</p>
-<p>#2. 按照字母序排序是为什么呢?</p>
-<p>答: 防止参数乱序之后，造成加密不一致的问题;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">安装依赖,也可以直接引入js库</span><br><span class="line">npm install md5</span><br><span class="line">生成签名过程,假设前台传入的参数都是object,若参数为字符串,则需另加判断</span><br><span class="line">//参数处理</span><br><span class="line">function A(params) &#123;</span><br><span class="line">    if (typeof params === &apos;object&apos;) &#123;</span><br><span class="line">        var arr = [];</span><br><span class="line">        for (var i in params) &#123;</span><br><span class="line">            if(!(params[i] === null || params[i] === &apos;&apos; || params[i] === undefined))&#123;</span><br><span class="line">                arr.push(i + &apos;=&apos; + (</span><br><span class="line">                    typeof params[i] === &apos;object&apos; ? JSON.stringify(params[i]) : params[i]</span><br><span class="line">                ));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return this.paramsStrSort(arr.join((&apos;&amp;&apos;)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">//生成签名</span><br><span class="line">function B(paramsStr) &#123;</span><br><span class="line">    let tmp = paramsStr + &apos;&amp;c=&apos; + c + &apos;&amp;d=&apos; + d;//c,d为时间戳和随机字符串</span><br><span class="line">    let str = _.split(tmp, &apos;&amp;&apos;).sort().join(&apos;&amp;&apos;);</span><br><span class="line">    let newStr = str + &apos;&amp;key=&apos; + secret;//secret为常量,由后端定义好</span><br><span class="line">    return md5(newStr);</span><br><span class="line">&#125;,</span><br><span class="line">调用过程</span><br><span class="line">paramsObj = &#123; xid: xid, pageSize: pageSize, type: type, pageNo: pageNo &#125;;</span><br><span class="line">sign = getSign(paramsObj);</span><br></pre></td></tr></table></figure>
-<h4 id="crypto-js-aes-解密"><a href="#crypto-js-aes-解密" class="headerlink" title="crypto-js aes 解密"></a>crypto-js aes 解密</h4><h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><p>返回的数据也涉及到敏感信息,所以对返回的数据也需要进行加密处理,最近做了一个解密的操作,用的是<code>AES+BASE64</code>算法,网上对于这类的加密算法还是蛮多的,这里推荐一篇文章 <a href="https://blog.csdn.net/qq_28205153/article/details/55798628" target="_blank" rel="noopener">AES加密算法的详细介绍与实现</a>.</p>
-<h5 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h5><p>搞懂了加密解密的实现是怎么一回事,已经成功了一大半,这里贴出一些核心代码,虽然代码量不多,但是做的过程是痛苦的,做出来之后在想想其实也没有那么复杂……这里推荐一篇文章帮助更好的理解AES. <a href="https://blog.csdn.net/vieri_32/article/details/48345023" target="_blank" rel="noopener">理解AES加密解密的使用方法</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">安装依赖</span><br><span class="line">npm install crypto-js</span><br><span class="line"></span><br><span class="line">function decrypt(data) &#123;</span><br><span class="line">    let key = CryptoJS.enc.Utf8.parse(&apos;key&apos;); // 秘钥</span><br><span class="line">    let baseResult=CryptoJS.enc.Base64.parse(data);</span><br><span class="line">    let ciphertext=CryptoJS.enc.Base64.stringify(baseResult);</span><br><span class="line"></span><br><span class="line">    let decrypted = CryptoJS.AES.decrypt(ciphertext, key, &#123; </span><br><span class="line">        mode: CryptoJS.mode.ECB,</span><br><span class="line">        padding: CryptoJS.pad.Pkcs7,</span><br><span class="line">    &#125;);</span><br><span class="line">    data = decrypted.toString(CryptoJS.enc.Utf8).toString();</span><br><span class="line">    return data;</span><br><span class="line">&#125;;</span><br><span class="line">调用:在返回的数据直接调用该方法即可.</span><br></pre></td></tr></table></figure></p>
-<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><p>在做的过程中遇到一个问题,前台传入的参数为中文或者特殊字符时,在传输过程中会做一些编码,后台在接收的时候需要对其进行重新编码才能够正确的拿到参数…</p>
-<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>关于加解密的方法还有很多,感兴趣的小伙伴们可以继续做一些深入的研究哈~</p>
+        <h5 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h5><p>当我们的页面嵌入到一个iframe中时，安全测试提出一个于我而言很新鲜的词汇–<code>点击劫持</code>,会造成安全隐患。</p>
+<h5 id="1-什么是点击劫持？"><a href="#1-什么是点击劫持？" class="headerlink" title="1. 什么是点击劫持？"></a>1. 什么是点击劫持？</h5><p>点击劫持（ClickJacking）是一种视觉上的欺骗手段。大概有两种方式，一是攻击者使用一个透明的iframe，覆盖在一个网页上，然后诱使用户在该页面上进行操作，此时用户将在不知情的情况下点击透明的iframe页面；二是攻击者使用一张图片覆盖在网页，遮挡网页原有位置的含义；</p>
+<p>简单的说，就是用户点击了一个按钮，但是触发的操作不是正常期待的事件，而是触发了别的非意愿操作…</p>
+<h5 id="2-解决办法"><a href="#2-解决办法" class="headerlink" title="2. 解决办法"></a>2. 解决办法</h5><p>X-Frame-Options 响应头配置避免点击劫持攻击</p>
+<p><strong>原理：</strong><br>X-Frame-Options HTTP响应头是用来给浏览器指示允许一个页面可否在<code>&lt;frame&gt;</code>,<code>&lt;iframe&gt;</code>或者<code>&lt;object&gt;</code>中展现的标记。网站可以使用此功能，来确保自己网站的内容没有被嵌到别人的网站中去，也从而避免了点击劫持 (clickjacking) 的攻击。</p>
+<p>X-Frame-Options有三种可配置值，（属性值不区分大小写）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">X-Frame-Options: DENY</span><br><span class="line">X-Frame-Options: SAMEORIGIN</span><br><span class="line">X-Frame-Options: ALLOW-FROM</span><br></pre></td></tr></table></figure>
+<p><strong>指令</strong><br>如果指定DENY，从其他站点加载时，不仅尝试在框架中加载页面失败，从同一站点加载时尝试这样做将失败。另一方面，如果指定SAMEORIGIN，只要包含在框架中的站点与为页面提供服务的站点相同，仍然可以在框架中使用该页面。</p>
+<p>DENY无论站点尝试这样做，页面都不能显示在框架中。SAMEORIGIN该页面只能显示在与页面本身相同的源框架中。ALLOW-FROM_ uri_页面只能显示在指定原点的框架中。</p>
+<p>当前项目是部署在<code>nginx</code>上的，那就以<code>nginx</code>为例来做个配置，除此还可以配置在 <code>Apache</code>,<code>IIS</code>等。</p>
+<p><strong>配置过程：</strong></p>
+<p>#1. 在nginx下 /opt/nginx/conf.d/example.conf下写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add_header X-Frame-Options &quot;allow-from https://example.com/&quot;;</span><br><span class="line">也可以直接写域名</span><br><span class="line">add_header X-Frame-Options &quot;allow-from example.com/&quot;;</span><br></pre></td></tr></table></figure>
+<p>#2. 踩坑</p>
+<p>发现在chrome下会报错，报错信息如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Invalid &apos;X-Frame-Options&apos; header encountered when loading &apos;example.com:8081/app.html&apos;: &apos;allow-from example.com/&apos; is not a recognized directive. The header will be ignored.</span><br></pre></td></tr></table></figure>
+<p>经过排查发现是在Chrome和Safari要使用Content-Security-Policy参数</p>
+<p>#3. 设置用Content-Security-Policy</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_header Content-Security-Policy &quot;frame-ancestors example.com&quot;;</span><br></pre></td></tr></table></figure>
+<h5 id="3-参考链接"><a href="#3-参考链接" class="headerlink" title="3. 参考链接"></a>3. 参考链接</h5><p><a href="https://www.jianshu.com/p/251704d8ff18" target="_blank" rel="noopener">web安全之–点击劫持攻击与防御技术简介</a></p>
+<p><a href="https://www.zhuyingda.com/blog/b6.html?origin=75" target="_blank" rel="noopener">ClickJacking漏洞的原理</a></p>
+<h5 id="4-相关知识点"><a href="#4-相关知识点" class="headerlink" title="4. 相关知识点"></a>4. 相关知识点</h5><p>防盗链攻击</p>
 
       
 
@@ -248,7 +258,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/26/encrypt-decrypt/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/07/ClickJacking/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -262,18 +272,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/28/essay/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          小分享
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/21/git-bisect/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git bisect 二分法快速定位问题代码</div>
+    <a href="/2019/01/06/encode-decode/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js 编码解码</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -300,7 +301,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#阐述"><span class="toc-number">1.</span> <span class="toc-text">阐述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#md5加密"><span class="toc-number">2.</span> <span class="toc-text">md5加密</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#crypto-js-aes-解密"><span class="toc-number">3.</span> <span class="toc-text">crypto-js aes 解密</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#背景"><span class="toc-number">3.1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#具体实现"><span class="toc-number">3.2.</span> <span class="toc-text">具体实现</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意点"><span class="toc-number">4.</span> <span class="toc-text">注意点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结语"><span class="toc-number">5.</span> <span class="toc-text">结语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#引言"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-什么是点击劫持？"><span class="toc-number">2.</span> <span class="toc-text">1. 什么是点击劫持？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-解决办法"><span class="toc-number">3.</span> <span class="toc-text">2. 解决办法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-参考链接"><span class="toc-number">4.</span> <span class="toc-text">3. 参考链接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-相关知识点"><span class="toc-number">5.</span> <span class="toc-text">4. 相关知识点</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -316,7 +317,7 @@
   
 
   
-  <div id="SOHUCS" sid="encrypt-decrypt" ></div> 
+  <div id="SOHUCS" sid="ClickJacking" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
