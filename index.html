@@ -164,16 +164,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p><code>localStorage</code>只能存储字符，在需要存储对象或者数组的时候如何存储呢？在这之前，现在了解一下<code>localStorage</code>。</p>
-<p>说起<code>localStorage</code>就会想起<code>sessionStorage</code>,那二者有什么区别呢？</p>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p><code>localStorage</code>只能存储字符，在需要存储对象或者数组的时候如何存储呢？在这之前，现在了解一下<code>localStorage</code>。<br>说起<code>localStorage</code>就会想起<code>sessionStorage</code>,那二者有什么区别呢？</p>
 <p><strong>#1. 作用域不同</strong></p>
-<p>这里的作用域指的是：如何隔离开不同页面之间的localStorage（总不能在百度的页面上能读到腾讯的localStorage吧，哈哈哈）。</p>
-<p><code>localStorage</code>只要在相同的协议、相同的主机名、相同的端口下，就能读取/修改到同一份<code>localStorage</code>数据。</p>
+<p>这里的作用域指的是：如何隔离开不同页面之间的localStorage（总不能在百度的页面上能读到腾讯的localStorage吧，哈哈哈）。<br><code>localStorage</code>只要在相同的协议、相同的主机名、相同的端口下，就能读取/修改到同一份<code>localStorage</code>数据。</p>
 <p><code>sessionStorage</code>比<code>localStorage</code>更严苛一点，除了协议、主机名、端口外，还要求在同一窗口（也就是浏览器的标签页）下。</p>
 <p><strong>#2. 生存期不同</strong></p>
 <p><code>localStorage</code>理论上来说是永久有效的，即不主动清空的话就不会消失，即使保存的数据超出了浏览器所规定的大小，也不会把旧数据清空而只会报错。但需要注意的是，在移动设备上的浏览器或各<code>Native App</code>用到的<code>WebView</code>里，<code>localStorage</code>都是不可靠的，可能会因为各种原因（比如说退出App、网络切换、内存不足等原因）被清空。</p>
-<p><code>sessionStorage</code>的生存期顾名思义，类似于<code>session</code>，只要关闭浏览器（也包括浏览器的标签页），就会被清空。由于<code>sessionStorage</code>的生存期太短，因此应用场景很有限，但从另一方面来看，不容易出现异常情况，比较可靠。</p>
-<h4 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h4><p><strong>#1.数据结构</strong></p>
+<p><code>sessionStorage</code>的生存期顾名思义，类似于<code>session</code>，只要关闭浏览器（也包括浏览器的标签页），就会被清空。由于sessionStorage的生存期太短，因此应用场景很有限，但从另一方面来看，不容易出现异常情况，比较可靠。</p>
+<h4 id="介绍localStorage"><a href="#介绍localStorage" class="headerlink" title="介绍localStorage"></a>介绍localStorage</h4><p><strong>#1.数据结构</strong></p>
 <p><code>localstorage</code>为标准的键值对（Key-Value,简称KV）数据类型，简单但也易扩展，只要以某种编码方式把想要存储进<code>localstorage</code>的对象给转化成字符串，就能轻松支持。</p>
 <p>举点例子：把对象转换成json字符串，就能让存储对象了；把图片转换成<code>DataUrl</code>（base64），就可以存储图片了。另外对于键值对数据类型来说，“键是唯一的”这个特性也是相当重要的，重复以同一个键来赋值的话，会覆盖上次的值。</p>
 <p><strong>#2. 域名限制</strong></p>
@@ -193,8 +191,7 @@ obj=JSON.stringify(obj);
 localStorage.setItem(&quot;temp2&quot;,obj);
 console.log(typeof localStorage.getItem(&quot;temp2&quot;)); //string
 JSON.parse(localStorage.getItem(&quot;temp2&quot;)); //{a: 1, b: 2}
-</code></pre><h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage" target="_blank" rel="noopener">MDN - Window.localStorage</a></p>
-<p><a href="http://www.cnblogs.com/xiaowei0705/archive/2011/04/19/2021372.html" target="_blank" rel="noopener">HTML5 LocalStorage 本地存储</a></p>
+</code></pre><h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage" target="_blank" rel="noopener">MDN - Window.localStorage</a><br><a href="http://www.cnblogs.com/xiaowei0705/archive/2011/04/19/2021372.html" target="_blank" rel="noopener">HTML5 LocalStorage 本地存储</a></p>
 
       
 
@@ -1020,11 +1017,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">前端必知技能</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color2">前端必知技能</a>
               </li>
              
               <li class="article-tag-list-item">
