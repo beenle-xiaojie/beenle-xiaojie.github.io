@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>咕咕鸡不咕咕</title>
+  <title>localStorage存取对象数组 | 咕咕鸡不咕咕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="咕咕鸡不咕咕">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="前言localStorage只能存储字符，在需要存储对象或者数组的时候如何存储呢？在这之前，现在了解一下localStorage。 说起localStorage就会想起sessionStorage,那二者有什么区别呢？ #1. 作用域不同 这里的作用域指的是：如何隔离开不同页面之间的localStorage（总不能在百度的页面上能读到腾讯的localStorage吧，哈哈哈）。 localStor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="localStorage存取对象数组">
+<meta property="og:url" content="http://yoursite.com/2019/01/15/localStorage/index.html">
 <meta property="og:site_name" content="咕咕鸡不咕咕">
+<meta property="og:description" content="前言localStorage只能存储字符，在需要存储对象或者数组的时候如何存储呢？在这之前，现在了解一下localStorage。 说起localStorage就会想起sessionStorage,那二者有什么区别呢？ #1. 作用域不同 这里的作用域指的是：如何隔离开不同页面之间的localStorage（总不能在百度的页面上能读到腾讯的localStorage吧，哈哈哈）。 localStor">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-15T07:51:37.623Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="咕咕鸡不咕咕">
+<meta name="twitter:title" content="localStorage存取对象数组">
+<meta name="twitter:description" content="前言localStorage只能存储字符，在需要存储对象或者数组的时候如何存储呢？在这之前，现在了解一下localStorage。 说起localStorage就会想起sessionStorage,那二者有什么区别呢？ #1. 作用域不同 这里的作用域指的是：如何隔离开不同页面之间的localStorage（总不能在百度的页面上能读到腾讯的localStorage吧，哈哈哈）。 localStor">
   
     <link rel="alternative" href="/atom.xml" title="咕咕鸡不咕咕" type="application/atom+xml">
   
@@ -142,16 +146,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-localStorage" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-localStorage" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/15/localStorage/">localStorage存取对象数组</a>
+    <h1 class="article-title" itemprop="name">
+      localStorage存取对象数组
     </h1>
   
 
@@ -208,10 +210,73 @@ JSON.parse(localStorage.getItem(&quot;temp2&quot;)); //{a: 1, b: 2}
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/15/localStorage/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/07/ClickJacking/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">点击劫持ClickJacking</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -226,694 +291,42 @@ JSON.parse(localStorage.getItem(&quot;temp2&quot;)); //{a: 1, b: 2}
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ClickJacking" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/07/ClickJacking/">点击劫持ClickJacking</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/07/ClickJacking/" class="archive-article-date">
-  	<time datetime="2019-01-07T10:16:27.782Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h5><p>当我们的页面嵌入到一个iframe中时，安全测试提出一个于我而言很新鲜的词汇–<code>点击劫持</code>,会造成安全隐患。</p>
-<h5 id="1-什么是点击劫持？"><a href="#1-什么是点击劫持？" class="headerlink" title="1. 什么是点击劫持？"></a>1. 什么是点击劫持？</h5><p>点击劫持（ClickJacking）是一种视觉上的欺骗手段。大概有两种方式，一是攻击者使用一个透明的iframe，覆盖在一个网页上，然后诱使用户在该页面上进行操作，此时用户将在不知情的情况下点击透明的iframe页面；二是攻击者使用一张图片覆盖在网页，遮挡网页原有位置的含义；</p>
-<p>简单的说，就是用户点击了一个按钮，但是触发的操作不是正常期待的事件，而是触发了别的非意愿操作…</p>
-<h5 id="2-解决办法"><a href="#2-解决办法" class="headerlink" title="2. 解决办法"></a>2. 解决办法</h5><p>X-Frame-Options 响应头配置避免点击劫持攻击</p>
-<p><strong>原理：</strong><br>X-Frame-Options HTTP响应头是用来给浏览器指示允许一个页面可否在<code>&lt;frame&gt;</code>,<code>&lt;iframe&gt;</code>或者<code>&lt;object&gt;</code>中展现的标记。网站可以使用此功能，来确保自己网站的内容没有被嵌到别人的网站中去，也从而避免了点击劫持 (clickjacking) 的攻击。</p>
-<p>X-Frame-Options有三种可配置值，（属性值不区分大小写）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">X-Frame-Options: DENY</span><br><span class="line">X-Frame-Options: SAMEORIGIN</span><br><span class="line">X-Frame-Options: ALLOW-FROM</span><br></pre></td></tr></table></figure>
-<p><strong>指令</strong><br>如果指定DENY，从其他站点加载时，不仅尝试在框架中加载页面失败，从同一站点加载时尝试这样做将失败。另一方面，如果指定SAMEORIGIN，只要包含在框架中的站点与为页面提供服务的站点相同，仍然可以在框架中使用该页面。</p>
-<p>DENY无论站点尝试这样做，页面都不能显示在框架中。SAMEORIGIN该页面只能显示在与页面本身相同的源框架中。ALLOW-FROM_ uri_页面只能显示在指定原点的框架中。</p>
-<p>当前项目是部署在<code>nginx</code>上的，那就以<code>nginx</code>为例来做个配置，除此还可以配置在 <code>Apache</code>,<code>IIS</code>等。</p>
-<p><strong>配置过程：</strong></p>
-<p>#1. 在nginx下 /opt/nginx/conf.d/example.conf下写入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add_header X-Frame-Options &quot;allow-from https://example.com/&quot;;</span><br><span class="line">也可以直接写域名</span><br><span class="line">add_header X-Frame-Options &quot;allow-from example.com/&quot;;</span><br></pre></td></tr></table></figure>
-<p>#2. 踩坑</p>
-<p>发现在chrome下会报错，报错信息如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Invalid &apos;X-Frame-Options&apos; header encountered when loading &apos;example.com:8081/app.html&apos;: &apos;allow-from example.com/&apos; is not a recognized directive. The header will be ignored.</span><br></pre></td></tr></table></figure>
-<p>经过排查发现是在Chrome和Safari要使用Content-Security-Policy参数</p>
-<p>#3. 设置用Content-Security-Policy</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_header Content-Security-Policy &quot;frame-ancestors example.com&quot;;</span><br></pre></td></tr></table></figure>
-<h5 id="3-参考链接"><a href="#3-参考链接" class="headerlink" title="3. 参考链接"></a>3. 参考链接</h5><p><a href="https://www.jianshu.com/p/251704d8ff18" target="_blank" rel="noopener">web安全之–点击劫持攻击与防御技术简介</a></p>
-<p><a href="https://www.zhuyingda.com/blog/b6.html?origin=75" target="_blank" rel="noopener">ClickJacking漏洞的原理</a></p>
-<h5 id="4-相关知识点"><a href="#4-相关知识点" class="headerlink" title="4. 相关知识点"></a>4. 相关知识点</h5><p>防盗链攻击</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全验证</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#localStorage"><span class="toc-number">2.</span> <span class="toc-text">localStorage</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考文章"><span class="toc-number">3.</span> <span class="toc-text">参考文章</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-encode-decode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/06/encode-decode/">js 编码解码</a>
-    </h1>
   
 
-        
-        <a href="/2019/01/06/encode-decode/" class="archive-article-date">
-  	<time datetime="2019-01-06T09:38:20.924Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>URL的合法字符表示再浏览器的地址栏中不会被转义的字符，有两种:</p>
-<p>#1. URL元字符：分号（;），逗号（’,’），斜杠（/），问号（?），冒号（:），at（@），&amp;，等号（=），加号（+），美元符号（$），井号（#）</p>
-<p>#2. 语义字符：a-z，A-Z，0-9，连词号（-），下划线（_），点（.），感叹号（!），波浪线（~），星号（*），单引号（），圆括号（()）<br>当输入的字符不符合以上的字符时，浏览器就会把该字符转义.<br>转义规则: 根据操作系统的默认编码，将每个字节转为百分号（%）加上两个大写的十六进制字母。<br>比如: 当再浏览器地址栏中输入     <code>www.baidu.com/q=你好</code>时,会被转义成例如 <code>www.baidu.com/q=%E6%98%A5%E8%8A%82</code>类似的字符串，浏览器才会读取。</p>
-<h5 id="1-encodeURI"><a href="#1-encodeURI" class="headerlink" title="1. encodeURI"></a>1. encodeURI</h5><p><strong>定义和用法</strong><br>encodeURI() 函数可把字符串作为 URI 进行编码。</p>
-<p><strong>说明:</strong><br>该方法不会对<code>ASCII</code>字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。<br>该方法的目的是对 URI 进行完整的编码，因此对以下在 URI 中具有特殊含义的 ASCII 标点符号，encodeURI() 函数是不会进行转义的：;/?:@&amp;=+$,#</p>
-<p><strong>示例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; encodeURI(&quot;http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;&quot;)</span><br><span class="line">&gt; http://www.baidu.com:8080:public/a=%E5%B0%8F%E7%8E%89&amp;b=%3C%3E</span><br></pre></td></tr></table></figure></p>
-<h5 id="2-encodeURIComponent"><a href="#2-encodeURIComponent" class="headerlink" title="2. encodeURIComponent"></a>2. encodeURIComponent</h5><p><strong>定义和用法</strong><br>和encodeURI一样,encodeURIComponent() 函数可把字符串作为 URI 组件进行编码。</p>
-<p><strong>说明</strong><br>该方法不会对 ASCII 字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。<br>其他字符（比如 ：;/?:@&amp;=+$,# 这些用于分隔 URI 组件的标点符号），都是由一个或多个十六进制的转义序列替换的。</p>
-<p><strong>示例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; encodeURI(&quot;http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;&quot;)</span><br><span class="line">&gt; http%3A%2F%2Fwww.baidu.com%3A8080%3Apublic%2Fa%3D%E5%B0%8F%E7%8E%89%26b%3D%3C%3E</span><br></pre></td></tr></table></figure></p>
-<h5 id="3-decodeURI"><a href="#3-decodeURI" class="headerlink" title="3. decodeURI"></a>3. decodeURI</h5><p><strong>定义和用法</strong><br>顾名思义,decodeURI() 函数可对 encodeURI() 函数编码过的 URI 进行解码。</p>
-<p><strong>示例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; decodeURI(&quot;http://www.baidu.com:8080:public/a=%E5%B0%8F%E7%8E%89&amp;b=%3C%3E&quot;)</span><br><span class="line">&gt; http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;</span><br></pre></td></tr></table></figure></p>
-<h5 id="4-decodeURIComponent"><a href="#4-decodeURIComponent" class="headerlink" title="4. decodeURIComponent"></a>4. decodeURIComponent</h5><p><strong>定义和用法</strong><br>顾名思义,decodeURIComponent() 函数可对 encodeURIComponent() 函数编码过的 URI 进行解码。</p>
-<p><strong>示例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; decodeURI(&quot;http%3A%2F%2Fwww.baidu.com%3A8080%3Apublic%2Fa%3D%E5%B0%8F%E7%8E%89%26b%3D%3C%3E&quot;)</span><br><span class="line">&gt; http://www.baidu.com:8080:public/a=小玉&amp;b=&lt;&gt;</span><br></pre></td></tr></table></figure></p>
-<h5 id="5-escape"><a href="#5-escape" class="headerlink" title="5. escape"></a>5. escape</h5><p><strong>定义和用法</strong><br>escape() 函数可对字符串进行编码，这样就可以在所有的计算机上读取该字符串。</p>
-<p><strong>说明</strong><br>该方法不会对 ASCII 字母和数字进行编码，也不会对下面这些 ASCII 标点符号进行编码： * @ - _ + . / 。其他所有的字符都会被转义序列替换。</p>
-<p><strong>示例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; escape(&quot;*123小玉@#$()8&quot;)</span><br><span class="line">&gt; *123%u5C0F%u7389@%23%24%28%298</span><br></pre></td></tr></table></figure></p>
-<h5 id="6-unescape"><a href="#6-unescape" class="headerlink" title="6. unescape"></a>6. unescape</h5><p><strong>定义和用法</strong><br>unescape() 函数可对通过 escape() 编码的字符串进行解码。</p>
-<p><strong>说明</strong><br>该函数的工作原理是这样的：通过找到形式为 %xx 和 %uxxxx 的字符序列（x 表示十六进制的数字），用 Unicode 字符 \u00xx 和 \uxxxx 替换这样的字符序列进行解码。</p>
-<p><strong>示例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; escape(&quot;*123%u5C0F%u7389@%23%24%28%298&quot;)</span><br><span class="line">&gt; *123小玉@#$()8&quot;</span><br></pre></td></tr></table></figure></p>
-<h4 id="提示和注释"><a href="#提示和注释" class="headerlink" title="提示和注释"></a>提示和注释</h4><p>ECMAScript v3 并反对使用<code>unescape</code>和<code>escape</code>，因此应该用 <code>decodeURI()</code> 或<code>ecodeURI()</code> 和 <code>decodeURIComponent()</code> 或<code>ecodeURIComponent()</code> 取而代之。</p>
-<h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h5><p>#1. 本文参照<code>w3c</code>;</p>
-<p>#2. <a href="https://www.jianshu.com/p/b2c6dc5fad0a" target="_blank" rel="noopener">前端编码解码</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-essay" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/essay/">小分享</a>
-    </h1>
+  <div id="SOHUCS" sid="localStorage" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
   
 
-        
-        <a href="/2018/12/28/essay/" class="archive-article-date">
-  	<time datetime="2018-12-28T03:35:41.655Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-encrypt-decrypt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/26/encrypt-decrypt/">md5加密 + crypto-js aes解密</a>
-    </h1>
   
 
-        
-        <a href="/2018/12/26/encrypt-decrypt/" class="archive-article-date">
-  	<time datetime="2018-12-26T09:01:24.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="阐述"><a href="#阐述" class="headerlink" title="阐述"></a>阐述</h4><p>我们常常会遇到有关支付的问题,在支付的过程中,就会遇到支付安全性的问题,而有关于money的交易,安全措施做的再多也不为过,当然配置https服务那是必须的……</p>
-<h4 id="md5加密"><a href="#md5加密" class="headerlink" title="md5加密"></a>md5加密</h4><p>使用<code>md5</code>加密将参数和时间戳以及随机字符串拼接,按照字典序排序生成签名,放入头部传给后台;</p>
-<p>那么问题来了?</p>
-<p>#1. 为什么要拼接时间戳和随机字符串呢?</p>
-<p>答:是为了防止被重放攻击;</p>
-<p>#2. 按照字母序排序是为什么呢?</p>
-<p>答: 防止参数乱序之后，造成加密不一致的问题;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">安装依赖,也可以直接引入js库</span><br><span class="line">npm install md5</span><br><span class="line">生成签名过程,假设前台传入的参数都是object,若参数为字符串,则需另加判断</span><br><span class="line">//参数处理</span><br><span class="line">function A(params) &#123;</span><br><span class="line">    if (typeof params === &apos;object&apos;) &#123;</span><br><span class="line">        var arr = [];</span><br><span class="line">        for (var i in params) &#123;</span><br><span class="line">            if(!(params[i] === null || params[i] === &apos;&apos; || params[i] === undefined))&#123;</span><br><span class="line">                arr.push(i + &apos;=&apos; + (</span><br><span class="line">                    typeof params[i] === &apos;object&apos; ? JSON.stringify(params[i]) : params[i]</span><br><span class="line">                ));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return this.paramsStrSort(arr.join((&apos;&amp;&apos;)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">//生成签名</span><br><span class="line">function B(paramsStr) &#123;</span><br><span class="line">    let tmp = paramsStr + &apos;&amp;c=&apos; + c + &apos;&amp;d=&apos; + d;//c,d为时间戳和随机字符串</span><br><span class="line">    let str = _.split(tmp, &apos;&amp;&apos;).sort().join(&apos;&amp;&apos;);</span><br><span class="line">    let newStr = str + &apos;&amp;key=&apos; + secret;//secret为常量,由后端定义好</span><br><span class="line">    return md5(newStr);</span><br><span class="line">&#125;,</span><br><span class="line">调用过程</span><br><span class="line">paramsObj = &#123; xid: xid, pageSize: pageSize, type: type, pageNo: pageNo &#125;;</span><br><span class="line">sign = getSign(paramsObj);</span><br></pre></td></tr></table></figure>
-<h4 id="crypto-js-aes-解密"><a href="#crypto-js-aes-解密" class="headerlink" title="crypto-js aes 解密"></a>crypto-js aes 解密</h4><h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><p>返回的数据也涉及到敏感信息,所以对返回的数据也需要进行加密处理,最近做了一个解密的操作,用的是<code>AES+BASE64</code>算法,网上对于这类的加密算法还是蛮多的,这里推荐一篇文章 <a href="https://blog.csdn.net/qq_28205153/article/details/55798628" target="_blank" rel="noopener">AES加密算法的详细介绍与实现</a>.</p>
-<h5 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h5><p>搞懂了加密解密的实现是怎么一回事,已经成功了一大半,这里贴出一些核心代码,虽然代码量不多,但是做的过程是痛苦的,做出来之后在想想其实也没有那么复杂……这里推荐一篇文章帮助更好的理解AES. <a href="https://blog.csdn.net/vieri_32/article/details/48345023" target="_blank" rel="noopener">理解AES加密解密的使用方法</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">安装依赖</span><br><span class="line">npm install crypto-js</span><br><span class="line"></span><br><span class="line">function decrypt(data) &#123;</span><br><span class="line">    let key = CryptoJS.enc.Utf8.parse(&apos;key&apos;); // 秘钥</span><br><span class="line">    let baseResult=CryptoJS.enc.Base64.parse(data);</span><br><span class="line">    let ciphertext=CryptoJS.enc.Base64.stringify(baseResult);</span><br><span class="line"></span><br><span class="line">    let decrypted = CryptoJS.AES.decrypt(ciphertext, key, &#123; </span><br><span class="line">        mode: CryptoJS.mode.ECB,</span><br><span class="line">        padding: CryptoJS.pad.Pkcs7,</span><br><span class="line">    &#125;);</span><br><span class="line">    data = decrypted.toString(CryptoJS.enc.Utf8).toString();</span><br><span class="line">    return data;</span><br><span class="line">&#125;;</span><br><span class="line">调用:在返回的数据直接调用该方法即可.</span><br></pre></td></tr></table></figure></p>
-<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><p>在做的过程中遇到一个问题,前台传入的参数为中文或者特殊字符时,在传输过程中会做一些编码,后台在接收的时候需要对其进行重新编码才能够正确的拿到参数…</p>
-<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>关于加解密的方法还有很多,感兴趣的小伙伴们可以继续做一些深入的研究哈~</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全验证</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-git-bisect" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/21/git-bisect/">git bisect 二分法快速定位问题代码</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/21/git-bisect/" class="archive-article-date">
-  	<time datetime="2018-12-21T07:46:14.756Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h4><p>前两天还好好的功能，怎么这个今天就不行了？这两天改动了很多代码，到底是那一次改动引发的 Bug？无从查起……</p>
-<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>Git提供的bisect这一命令,就是二分法查找快速地在提交中定位 Bug,少则几次,多则十几次就会定位到引入Bug的提交.</p>
-<h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h4><p>举个例子:</p>
-<p>一个人在1到100的数字中随意选择一个，另外一个人来猜，比起一个挨着一个地猜,懂得折半查找的人总是获胜者。</p>
-<h4 id="命令使用"><a href="#命令使用" class="headerlink" title="命令使用"></a>命令使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git bisect 其实很简单，主要是基于几个基本命令：</span><br><span class="line"></span><br><span class="line">git bisect start：准备进行 bisect debug。</span><br><span class="line">git bisect good：标记一个提交为 &quot;good&quot;。</span><br><span class="line">git bisect bad：标记一个提交为 “bad”。</span><br><span class="line">git bisect reset：退出 bisect debug 的状态。</span><br><span class="line"></span><br><span class="line">git bisect 涉及到的命令，非常的清晰简单，下面举个实际的例子，结合上面的解释，就更清晰了</span><br></pre></td></tr></table></figure>
-<h4 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h4><h4 id="1-查看提交记录"><a href="#1-查看提交记录" class="headerlink" title="1. 查看提交记录"></a>1. 查看提交记录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># git log</span><br><span class="line">    commit 94f6cc</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Fri Dec 21 13:22:55 2018 +0800</span><br><span class="line">        更改多语言</span><br><span class="line">    commit c2237</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Thu Dec 20 19:51:18 2018 +0800</span><br><span class="line">        多语言模拟数据</span><br><span class="line">    commit 50b42</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Thu Dec 20 19:51:01 2018 +0800</span><br><span class="line">        删除模版文件代码</span><br><span class="line">    commit 5be11</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Thu Dec 20 19:50:36 2018 +0800</span><br><span class="line">        分离路由</span><br><span class="line">    commit d3dec</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Thu Dec 20 19:50:03 2018 +0800</span><br><span class="line">        增加多语言</span><br><span class="line">    commit a2de6</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Wed Dec 19 13:09:14 2018 +0800</span><br><span class="line">        语言设置从后台获取</span><br></pre></td></tr></table></figure>
-<h4 id="2-开启二分查找"><a href="#2-开启二分查找" class="headerlink" title="2. 开启二分查找"></a>2. 开启二分查找</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># git bisect start</span><br></pre></td></tr></table></figure>
-<h4 id="3-找出一个好的提交版本进行标记"><a href="#3-找出一个好的提交版本进行标记" class="headerlink" title="3. 找出一个好的提交版本进行标记"></a>3. 找出一个好的提交版本进行标记</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># git bisect good a2de6</span><br></pre></td></tr></table></figure>
-<h4 id="4-标记bad版本"><a href="#4-标记bad版本" class="headerlink" title="4. 标记bad版本"></a>4. 标记bad版本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># git bisect bad</span><br><span class="line">    Bisecting: 2 revisions left to test after this (roughly 1 step)</span><br><span class="line">    [5be11] 分离路由</span><br></pre></td></tr></table></figure>
-<p>当完成对一个好版本和一个坏版本的标记后,Git切换到一个中间版本（5be11),并告诉我们大概需要1步可以找到元凶。</p>
-<h4 id="5-继续标记版本"><a href="#5-继续标记版本" class="headerlink" title="5. 继续标记版本"></a>5. 继续标记版本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># git bisect good 5be11</span><br><span class="line">    Bisecting: 0 revisions left to test after this (roughly 1 step)</span><br><span class="line">    [d3dec] 删除模版文件代码</span><br></pre></td></tr></table></figure>
-<h4 id="6-再来一步"><a href="#6-再来一步" class="headerlink" title="6. 再来一步"></a>6. 再来一步</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># git bisect bad</span><br><span class="line">    Bisecting: 0 revisions left to test after this (roughly 0 steps)</span><br><span class="line">    [50b42] 删除模版文件代码</span><br><span class="line"># git bisect bad</span><br><span class="line">    d3dec is the first bad commit</span><br><span class="line">    commit 50b42</span><br><span class="line">    Author: xxxx</span><br><span class="line">    Date:   Thu Dec 20 19:50:03 2018 +0800</span><br><span class="line">        删除模版文件代码</span><br></pre></td></tr></table></figure>
-<p>这样元凶就找到了,查看你的提交记录是不是改动了什么东西吧!!!</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git 命令使用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-slb" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/14/slb/">域名+nginx负载均衡</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/14/slb/" class="archive-article-date">
-  	<time datetime="2018-12-14T08:48:06.414Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、域名和证书介绍"><a href="#一、域名和证书介绍" class="headerlink" title="一、域名和证书介绍"></a>一、域名和证书介绍</h3><p>在近期的前端资源配置中,遇到过域名对应的证书和密钥的对应关系:</p>
-<h4 id="1、我们先来看一下域名的分类"><a href="#1、我们先来看一下域名的分类" class="headerlink" title="1、我们先来看一下域名的分类:"></a>1、我们先来看一下域名的分类:</h4><ul>
-<li>顶级域名:<blockquote>
-<p>是互联网DNS等级之中的最高级的域，它保存于DNS根域的名字空间中。顶级域名是域名的最后一个部分，即是域名最后一点之后的字母，例如在example.com这个域名中,顶级域是.com(或.COM),大小写视为相同。</p>
-</blockquote>
-</li>
-<li>二级域名:<blockquote>
-<p>就是最靠近顶级域名左侧的字段。如：zh.wikipedia.org中，<strong>wikipedia就是二级域名</strong>(有资料认为, 在顶级域名后面, 还存在一级域名, 那么zh就是二级域名)。</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>我国在国际互联网络信息中心（Inter NIC正式注册并运行的顶级域名是.cn,这也是我国的一级域名.在顶级域名之下，我国的二级域名又分为类别域名和行政区域名两类。类别域名共6个,包括用于科研机构的.ac;用于工商金融企业的.com；用于教育机构的.edu；用于政府部门的.gov；用于互联网络信息中心和运行中心的.net；用于非盈利组织的.org。而行政区域名有34个，分别对应于我国各省、自治区和直辖市。</p>
-</blockquote>
-<ul>
-<li>父域名和子域名(也有资料称为二级域名)<blockquote>
-<p>一个相对概念,很好理解.如 <a href="http://www.sina.com.cn" target="_blank" rel="noopener">www.sina.com.cn</a> 和 news.sina.com.cn 都是 sina.com.cn的子域名（或称为二级域名）， sina.com.cn就是父域名。同样,sina.com.cn其实又可以看作是.com.cn的子域名；而com.cn又是.cn的一个子域名</p>
-</blockquote>
-<h4 id="2、ssl证书对应的域名"><a href="#2、ssl证书对应的域名" class="headerlink" title="2、ssl证书对应的域名"></a>2、ssl证书对应的域名</h4>SSL证书有三种类型:</li>
-<li>单域名证书:可以绑定一条带www和不带www的域名，比如admin.com和 <a href="http://www.admin.com" target="_blank" rel="noopener">www.admin.com</a> 就是一条;</li>
-<li>多域名证书:可以绑定250多条任意类型的域名;</li>
-<li>泛域名证书:可以绑定一条顶级域名和顶级域名下的所有二级域名，或者是一条二级域名和二级域名下的所有三级域名。</li>
-</ul>
-<p><strong>那列举这些是为了解决什么问题呢?</strong><br>答:在配置https的时候在一台服务上可能需要配置两个域名或者更多,正常的思维是一个域名那我就要配置一个证书等,但是在配置的时候并不是,发现以.example.com的域名,其下的子域名比如: a..example.com和b.example.com其实使用的是同一份证书,原因就是他们的父域名是同样的.像这种情况,我们只需要在服务器的<code>nginx.conf</code>文件下,配置一份证书就可以了.</p>
-<h3 id="二、nginx负载均衡"><a href="#二、nginx负载均衡" class="headerlink" title="二、nginx负载均衡"></a>二、nginx负载均衡</h3><h5 id="配置负载均衡目的"><a href="#配置负载均衡目的" class="headerlink" title="配置负载均衡目的"></a>配置负载均衡目的</h5><p>是为了解决单个节点压力过大，造成Web服务响应过慢，严重的情况下导致服务瘫痪，无法正常提供服务。</p>
-<p>示例:<br>春节期间在12306网站上，有时查询一张火车票都会很慢，甚至整个网页都卡住不动了,由于一个Web服务同时能处理的用户并发请求的数量有限，同时还有机器故障的情况,所以一个Web站点通常会在N台机器上各部署一套同样的程序。当某一个服务挂掉的时候，还有第二个、第三个、第N个服务。。。继续为用户提供服务.如果有一个服务正在同时处理1000个用户的请求，这个服务的上限可能最多能同时处理1000个用户的请求，这时它已经很忙了，如果此时又有一个新请求过来，我们仍然把这个请求分配给这台机器，这时候这个请求就只能在干等着，等这个服务处理完那些请求后，再继续处理它。</p>
-<h5 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h5><p>将用户的所有HTTP请求均衡的分配到每一台机器上，充分发挥所有机器的性能，提高服务的质量和用户体验。</p>
-<h5 id="配置样例"><a href="#配置样例" class="headerlink" title="配置样例"></a>配置样例</h5><p>实现负载均衡常用的Web服务器软件有Nginx、Apache等,本文介绍nginx下负载均衡策略;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">upstream slb &#123;</span><br><span class="line">    server 192.168.0.100:8080 weight=2 max_fails=3 fail_timeout=1;  # 2/6次</span><br><span class="line">    server 192.168.0.101:8080 weight=3;  # 3/6次</span><br><span class="line">    server 192.168.0.102:8080 weight=1;  # 1/6次</span><br><span class="line">&#125;</span><br><span class="line">server&#123;</span><br><span class="line">    listen 443; //默认是443端口,若不设置其他端口,在配置域名的情况下,可通过域名直接访问</span><br><span class="line">    server_name  xxx.example.com;</span><br><span class="line"></span><br><span class="line">    location ~ /api &#123;</span><br><span class="line">        proxy_pass http://slb;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>proxy_pass <a href="http://slb" target="_blank" rel="noopener">http://slb</a> 表示将所有请求转发到slb服务器组中配置的某一台服务器上;</li>
-<li>upstream模块：配置反向代理服务器组，Nginx会根据配置，将请求分发给组里的某一台服务器,slb是服务器组的名称;</li>
-<li>upstream模块下的server指令：配置处理请求的服务器IP或域名，端口可选，不配置默认使用80端口。通过上面的配置，Nginx默认将请求依次分配给100，101，102来处理，可以通过修改一些参数来改变默认的分配策略：</li>
-</ul>
-<blockquote>
-<p>weight:默认为1，将请求平均分配给每台server;</p>
-</blockquote>
-<blockquote>
-<p>max_fails:默认为1。某台Server允许请求失败的次数，超过最大次数后，在fail_timeout时间内，新的请求将不会分配给这台机器。如果设置为0，Nginx会将这台Server置为永久无效状态，然后将请求发给定义了proxy_next_upstream, fastcgi_next_upstream, uwsgi_next_upstream, scgi_next_upstream, and memcached_next_upstream指令来处理这次错误的请求;</p>
-</blockquote>
-<blockquote>
-<p>fail_timeout:<br>默认为10秒,某台Server达到max_fails次失败请求后，在fail_timeout期间内，nginx会认为这台Server暂时不可用，不会将请求分配给它;</p>
-</blockquote>
-<blockquote>
-<p>还有一些参数,比如:backup, down, max_conns, resolve</p>
-</blockquote>
-<p>说明:简单的配置其实就用到了<code>upstream</code>,如有兴趣,可对其进行深入的了解,做前端,了解一些配置、系统、后端的知识还是很有必要的;</p>
-<!-- [参考链接](https://blog.csdn.net/xyang81/article/details/51702900) -->
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-deploy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/09/deploy/">静态资源部署</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/09/deploy/" class="archive-article-date">
-  	<time datetime="2018-12-09T08:52:40.954Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="部署小白看这里呦-以centos为例"><a href="#部署小白看这里呦-以centos为例" class="headerlink" title="部署小白看这里呦,以centos为例"></a>部署小白看这里呦,以centos为例</h3><h4 id="如有需要-在centos上安装-Nginx"><a href="#如有需要-在centos上安装-Nginx" class="headerlink" title="如有需要,在centos上安装 Nginx"></a>如有需要,在centos上安装 Nginx</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 1. add nginx repository</span><br><span class="line">sudo yum install epel-release</span><br><span class="line"># 2. install nginx</span><br><span class="line">sudo yum install nginx</span><br><span class="line"># 3 start nginx</span><br><span class="line">nginx</span><br><span class="line"># 4. restart nginx</span><br><span class="line">nginx -s reload</span><br><span class="line"># 特殊情况</span><br><span class="line">当一台服务器有a,b,c等多个ningx服务时,在b这个服务上做些配置,在启动的时候要在sbin目录下</span><br><span class="line">sudo ./nginx -s reload</span><br></pre></td></tr></table></figure>
-<p>配置一个服务<br>在<code>/etc/nginx/conf.d</code>目录下面创建一个新文件，建议命名<code>&lt;port&gt;-&lt;name&gt;.conf</code>，文件内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 9881;</span><br><span class="line">    root /opt/public; //文件路径</span><br><span class="line">    rewrite ^/$ /index.html redirect;</span><br><span class="line"></span><br><span class="line">    location /api &#123;</span><br><span class="line">        proxy_pass http://localhost:9880/api;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="将本地静态资源放入服务器上-这一步必不可少呦"><a href="#将本地静态资源放入服务器上-这一步必不可少呦" class="headerlink" title="将本地静态资源放入服务器上,这一步必不可少呦"></a>将本地静态资源放入服务器上,这一步必不可少呦</h4><p>建议:若是使用命令上传文件,最好是本地压缩后在上传,在进行解压;若是使用可视化工具,可使用工具<code>Filezilla</code>,直接上传;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">静态资源在当前路径下使用scp命令传入nginx上:</span><br><span class="line">scp -r dist.zip root@&lt;ip&gt;:/opt/public</span><br><span class="line">在/opt/public目录下解压:</span><br><span class="line">unzip dist.zip</span><br></pre></td></tr></table></figure>
-<h4 id="安装压缩和解压包zip工具"><a href="#安装压缩和解压包zip工具" class="headerlink" title="安装压缩和解压包zip工具"></a>安装压缩和解压包zip工具</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install zip</span><br><span class="line">yum install unzip</span><br></pre></td></tr></table></figure>
-<h4 id="如有需要-配置https服务"><a href="#如有需要-配置https服务" class="headerlink" title="如有需要,配置https服务"></a>如有需要,配置https服务</h4><p>推荐文章 <a href="https://juejin.im/entry/58d7635e5c497d0057fae036" target="_blank" rel="noopener">详解http和https:</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 9881;</span><br><span class="line">    root /opt/public;</span><br><span class="line">    server_name  public.example.com;  //域名</span><br><span class="line">    rewrite ^/$ /index.html redirect;</span><br><span class="line">    ssl on;   //开启ssl服务</span><br><span class="line">    ssl_certificate  /etc/nginx/conf.d/public.pem;  //证书</span><br><span class="line">    ssl_certificate_key /etc/nginx/conf.d/public.key;  //私钥</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">    location /api &#123;</span><br><span class="line">        proxy_pass http://public.example.com:9880/api;  //https访问的域名</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-fouc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/12/fouc/">FOUC和白屏</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/12/fouc/" class="archive-article-date">
-  	<time datetime="2018-11-12T09:37:58.366Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="FOUC-Flash-of-Unstyled-Content-无样式内容闪烁"><a href="#FOUC-Flash-of-Unstyled-Content-无样式内容闪烁" class="headerlink" title="FOUC(Flash of Unstyled Content,无样式内容闪烁)"></a>FOUC(Flash of Unstyled Content,无样式内容闪烁)</h2><p><strong>原理:</strong><br>当样式表晚于结构性html加载，当加载到此样式表时，页面将停止之前的渲染。此样式表被下载和解析后，将重新渲染页面，也就出现了短暂的花屏现象.</p>
-<p><strong>产生原因:</strong><br>FOUC的产生和浏览器的渲染机制有关.主要是由于浏览器先显示已加载的HTML内容，等到CSS加载完成后重新对内容添加样式导致，主要代表有Firefox。导致FOUC的原因有以下三种：</p>
-<ul>
-<li>使用<code>@import</code>导入样式表;</li>
-<li>将样式表放在页面底部;</li>
-<li>有几个样式表，放在页面不同位置。</li>
-</ul>
-<p><strong>解决办法:</strong><br>使用<code>LINK</code>标签将样式表放在文档HEAD中;</p>
-<h2 id="白屏"><a href="#白屏" class="headerlink" title="白屏"></a>白屏</h2><p><strong>产生原因:</strong></p>
-<ul>
-<li>将<code>CSS</code>文件放在HTML文档的最后;</li>
-<li>使用<code>@import</code>导入样式表（通过@import引入的CSS文件会被最后加载);</li>
-<li>将<code>JS</code>文件放在头部，未使用<code>defer</code>或<code>async</code>延迟或异步加载JS文件，导致JS阻塞HTML和CSS的加载;</li>
-</ul>
-<p><strong>解决方法和FOUC一样.</strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">前端必知技能</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -949,8 +362,8 @@ JSON.parse(localStorage.getItem(&quot;temp2&quot;)); //{a: 1, b: 2}
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
