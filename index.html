@@ -144,6 +144,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-return" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/22/return/">return 用法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/22/return/" class="archive-article-date">
+  	<time datetime="2019-01-22T08:29:53.582Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、js中，return-0，return-false的区别？"><a href="#一、js中，return-0，return-false的区别？" class="headerlink" title="一、js中，return 0，return false的区别？"></a>一、js中，return 0，return false的区别？</h4><p>乍眼看去，return 0和return false不是一样的吗，0转为布尔值不就是false，为假吗，其实并不是，怎么去更好的辨别呢？</p>
+<ol>
+<li>return的值，0就是0，false就是false，是不一样的：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var result = function( a, b )&#123;</span><br><span class="line">    return a===b ? 1 : 0;</span><br><span class="line">&#125;</span><br><span class="line">console.log(result(1,2)); //0</span><br></pre></td></tr></table></figure>
+<p>这个例子打印的就是0；</p>
+<p>再看一个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function returnFalse() &#123; return false; &#125;</span><br><span class="line">function returnZero() &#123; return 0; &#125;</span><br><span class="line"></span><br><span class="line">if( returnFalse() === false ) console.log(&quot;I&apos;m preventDefault() by false&quot;);</span><br><span class="line">if( returnZero() === false ) console.log(&quot;I&apos;m perventDefault() by zero&quot;);</span><br></pre></td></tr></table></figure>
+<p>这个例子运行后打印的是<code>I&#39;m preventDefault() by false</code>,更清楚的表明return 0并不等价于return false；</p>
+<p>那到这里疑问就来了，我们写代码的过程中写过0就是false的情况，是什么情况下，0可以等价于false？</p>
+<ol start="2">
+<li>在写判断条件的时候，0可以作为表达式使用，这个时候0才具有false的性质：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(0)&#123;</span><br><span class="line">    console.log(true);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    console.log(false);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个时候打印结果为false，因为这个这个0会作为一个转为布尔值的操作，在0被转为了false，这个会执行else的操作，所以输出的结果是false；</p>
+<p>总结:</p>
+<ol>
+<li>0可以作为语句存在；</li>
+<li>0只有作为表达式存在，才具有false的性质；</li>
+<li>常见的表达式中会被视为false的值有：<ul>
+<li>数字0；</li>
+<li>空字符串’’;</li>
+<li>布尔值false；</li>
+<li>null；</li>
+<li>undefined；</li>
+</ul>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-localStorage" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

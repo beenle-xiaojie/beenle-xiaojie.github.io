@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | 咕咕鸡不咕咕</title>
+  <title>return 用法 | 咕咕鸡不咕咕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="咕咕鸡不咕咕">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="一、js中，return 0，return false的区别？乍眼看去，return 0和return false不是一样的吗，0转为布尔值不就是false，为假吗，其实并不是，怎么去更好的辨别呢？  return的值，0就是0，false就是false，是不一样的：  1234var result = function( a, b )&amp;#123;    return a===b ? 1 : 0;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="return 用法">
+<meta property="og:url" content="http://yoursite.com/2019/01/22/return/index.html">
 <meta property="og:site_name" content="咕咕鸡不咕咕">
+<meta property="og:description" content="一、js中，return 0，return false的区别？乍眼看去，return 0和return false不是一样的吗，0转为布尔值不就是false，为假吗，其实并不是，怎么去更好的辨别呢？  return的值，0就是0，false就是false，是不一样的：  1234var result = function( a, b )&amp;#123;    return a===b ? 1 : 0;">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-22T08:30:16.222Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="咕咕鸡不咕咕">
+<meta name="twitter:title" content="return 用法">
+<meta name="twitter:description" content="一、js中，return 0，return false的区别？乍眼看去，return 0和return false不是一样的吗，0转为布尔值不就是false，为假吗，其实并不是，怎么去更好的辨别呢？  return的值，0就是0，false就是false，是不一样的：  1234var result = function( a, b )&amp;#123;    return a===b ? 1 : 0;">
   
     <link rel="alternative" href="/atom.xml" title="咕咕鸡不咕咕" type="application/atom+xml">
   
@@ -142,141 +146,185 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-return" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      return 用法
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/22/return/" class="archive-article-date">
+
+        
+        <a href="/2019/01/22/return/" class="archive-article-date">
   	<time datetime="2019-01-22T08:29:53.582Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/22/return/">return 用法</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、js中，return-0，return-false的区别？"><a href="#一、js中，return-0，return-false的区别？" class="headerlink" title="一、js中，return 0，return false的区别？"></a>一、js中，return 0，return false的区别？</h4><p>乍眼看去，return 0和return false不是一样的吗，0转为布尔值不就是false，为假吗，其实并不是，怎么去更好的辨别呢？</p>
+<ol>
+<li>return的值，0就是0，false就是false，是不一样的：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var result = function( a, b )&#123;</span><br><span class="line">    return a===b ? 1 : 0;</span><br><span class="line">&#125;</span><br><span class="line">console.log(result(1,2)); //0</span><br></pre></td></tr></table></figure>
+<p>这个例子打印的就是0；</p>
+<p>再看一个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function returnFalse() &#123; return false; &#125;</span><br><span class="line">function returnZero() &#123; return 0; &#125;</span><br><span class="line"></span><br><span class="line">if( returnFalse() === false ) console.log(&quot;I&apos;m preventDefault() by false&quot;);</span><br><span class="line">if( returnZero() === false ) console.log(&quot;I&apos;m perventDefault() by zero&quot;);</span><br></pre></td></tr></table></figure>
+<p>这个例子运行后打印的是<code>I&#39;m preventDefault() by false</code>,更清楚的表明return 0并不等价于return false；</p>
+<p>那到这里疑问就来了，我们写代码的过程中写过0就是false的情况，是什么情况下，0可以等价于false？</p>
+<ol start="2">
+<li>在写判断条件的时候，0可以作为表达式使用，这个时候0才具有false的性质：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(0)&#123;</span><br><span class="line">    console.log(true);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    console.log(false);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个时候打印结果为false，因为这个这个0会作为一个转为布尔值的操作，在0被转为了false，这个会执行else的操作，所以输出的结果是false；</p>
+<p>总结:</p>
+<ol>
+<li>0可以作为语句存在；</li>
+<li>0只有作为表达式存在，才具有false的性质；</li>
+<li>常见的表达式中会被视为false的值有：<ul>
+<li>数字0；</li>
+<li>空字符串’’;</li>
+<li>布尔值false；</li>
+<li>null；</li>
+<li>undefined；</li>
+</ul>
+</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/22/return/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/15/localStorage/" class="archive-article-date">
-  	<time datetime="2019-01-15T07:50:04.960Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/15/localStorage/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">localStorage存取对象数组</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/15/localStorage/">localStorage存取对象数组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、js中，return-0，return-false的区别？"><span class="toc-number">1.</span> <span class="toc-text">一、js中，return 0，return false的区别？</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/07/ClickJacking/" class="archive-article-date">
-  	<time datetime="2019-01-07T10:16:27.782Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-07</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/07/ClickJacking/">点击劫持ClickJacking</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全验证</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/06/encode-decode/" class="archive-article-date">
-  	<time datetime="2019-01-06T09:38:20.924Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/06/encode-decode/">js 编码解码</a>
-    </h1>
+  <div id="SOHUCS" sid="return" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -312,8 +360,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
