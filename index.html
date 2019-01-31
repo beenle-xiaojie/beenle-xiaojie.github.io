@@ -144,6 +144,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-overflow" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/31/overflow/">揭秘overflow为hidden作用</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/31/overflow/" class="archive-article-date">
+  	<time datetime="2019-01-31T05:58:51.405Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近遇到了一个给div设置 overflow:hidden 清除兄弟div的浮动的样式，于是深究一下：</p>
+<h4 id="一、属性值"><a href="#一、属性值" class="headerlink" title="一、属性值"></a>一、属性值</h4><p>提到overflow，就会想到他的几个属性值：<br>W3C是这样解释的:</p>
+<ul>
+<li>visible; 默认值。内容不会被修剪，会呈现在元素框之外。</li>
+<li>hidden; 内容会被修剪，并且其余内容是不可见的。</li>
+<li>auto; 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。</li>
+<li>scroll; 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。</li>
+<li>inherit; 规定应该从父元素继承 overflow 属性的值。<br>这几个属性想必大家都很熟悉，但是对hidden这个属性值你真的了解吗？</li>
+</ul>
+<h4 id="二、详解hidden的用法"><a href="#二、详解hidden的用法" class="headerlink" title="二、详解hidden的用法"></a>二、详解hidden的用法</h4><p>html代码示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;div1&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;div2&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>css代码示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">    background-color: black;</span><br><span class="line">&#125;</span><br><span class="line">.div1&#123;</span><br><span class="line">    background-color: aqua;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">&#125;</span><br><span class="line">.div2&#123;</span><br><span class="line">    background-color: red;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="1、隐藏溢出"><a href="#1、隐藏溢出" class="headerlink" title="1、隐藏溢出"></a>1、隐藏溢出</h6><p>这个很好理解，假如父元素div的的高度给150px小于子元素的高度之和200px时，给父元素设置<code>overflow:hidden</code>，这个时候即便是子元素的高度高出父元素，也会被隐藏；</p>
+<h6 id="2、清除浮动"><a href="#2、清除浮动" class="headerlink" title="2、清除浮动"></a>2、清除浮动</h6><p>给两个子元素div设置<code>float:left</code>，这时候的效果是黑色的外层div消失了，是因为浮动的元素脱离开了文档流，不占据空间，父元素识别不了子元素的高度，这个时候父元素设置<code>overflow:hidden</code>，效果就是在浏览器中，子元素的高度撑开了父元素的高度，除去子元素占据空间的的背景颜色，其余背景是父元素的背景色黑色；</p>
+<h6 id="3、解除坍塌"><a href="#3、解除坍塌" class="headerlink" title="3、解除坍塌"></a>3、解除坍塌</h6><p>什么是坍塌？<br>举个例子：如果给div1设置<code>margin-top:50px</code>,期待的效果是有一部分空间是高度50px,背景为黑色部分，但是事实并不是这样，这就是坍塌。这里多说一句：这种坍塌只针对于父亲的第一个儿子，div2设置<code>margin-top:50px</code>则不会有任何不妥。 防止这种坍塌现象就是给父元素设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">    background-color: black;</span><br><span class="line">    overflow：hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在多说一句：浮动的div不用考虑坍塌。</p>
+<p>没办法贴图，有兴趣的小伙伴可以敲一下试试!</p>
+<p>参考链接：<br><a href="https://blog.csdn.net/Hukaihe/article/details/51298665" target="_blank" rel="noopener">深入理解：overflow:hidden——溢出,坍塌,清除浮动</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-return" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -919,90 +996,10 @@ JSON.parse(localStorage.getItem(&quot;temp2&quot;)); //{a: 1, b: 2}
 
 
   
-    <article id="post-fouc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/12/fouc/">FOUC和白屏</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/12/fouc/" class="archive-article-date">
-  	<time datetime="2018-11-12T09:37:58.366Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="FOUC-Flash-of-Unstyled-Content-无样式内容闪烁"><a href="#FOUC-Flash-of-Unstyled-Content-无样式内容闪烁" class="headerlink" title="FOUC(Flash of Unstyled Content,无样式内容闪烁)"></a>FOUC(Flash of Unstyled Content,无样式内容闪烁)</h2><p><strong>原理:</strong><br>当样式表晚于结构性html加载，当加载到此样式表时，页面将停止之前的渲染。此样式表被下载和解析后，将重新渲染页面，也就出现了短暂的花屏现象.</p>
-<p><strong>产生原因:</strong><br>FOUC的产生和浏览器的渲染机制有关.主要是由于浏览器先显示已加载的HTML内容，等到CSS加载完成后重新对内容添加样式导致，主要代表有Firefox。导致FOUC的原因有以下三种：</p>
-<ul>
-<li>使用<code>@import</code>导入样式表;</li>
-<li>将样式表放在页面底部;</li>
-<li>有几个样式表，放在页面不同位置。</li>
-</ul>
-<p><strong>解决办法:</strong><br>使用<code>LINK</code>标签将样式表放在文档HEAD中;</p>
-<h2 id="白屏"><a href="#白屏" class="headerlink" title="白屏"></a>白屏</h2><p><strong>产生原因:</strong></p>
-<ul>
-<li>将<code>CSS</code>文件放在HTML文档的最后;</li>
-<li>使用<code>@import</code>导入样式表（通过@import引入的CSS文件会被最后加载);</li>
-<li>将<code>JS</code>文件放在头部，未使用<code>defer</code>或<code>async</code>延迟或异步加载JS文件，导致JS阻塞HTML和CSS的加载;</li>
-</ul>
-<p><strong>解决方法和FOUC一样.</strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">前端必知技能</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 

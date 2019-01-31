@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 咕咕鸡不咕咕</title>
+  <title>揭秘overflow为hidden作用 | 咕咕鸡不咕咕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="咕咕鸡不咕咕">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="最近遇到了一个给div设置 overflow:hidden 清除兄弟div的浮动的样式，于是深究一下： 一、属性值提到overflow，就会想到他的几个属性值：W3C是这样解释的:  visible; 默认值。内容不会被修剪，会呈现在元素框之外。 hidden; 内容会被修剪，并且其余内容是不可见的。 auto; 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。 scroll; 如果内容被">
+<meta property="og:type" content="article">
+<meta property="og:title" content="揭秘overflow为hidden作用">
+<meta property="og:url" content="http://yoursite.com/2019/01/31/overflow/index.html">
 <meta property="og:site_name" content="咕咕鸡不咕咕">
+<meta property="og:description" content="最近遇到了一个给div设置 overflow:hidden 清除兄弟div的浮动的样式，于是深究一下： 一、属性值提到overflow，就会想到他的几个属性值：W3C是这样解释的:  visible; 默认值。内容不会被修剪，会呈现在元素框之外。 hidden; 内容会被修剪，并且其余内容是不可见的。 auto; 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。 scroll; 如果内容被">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-31T06:05:02.102Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="咕咕鸡不咕咕">
+<meta name="twitter:title" content="揭秘overflow为hidden作用">
+<meta name="twitter:description" content="最近遇到了一个给div设置 overflow:hidden 清除兄弟div的浮动的样式，于是深究一下： 一、属性值提到overflow，就会想到他的几个属性值：W3C是这样解释的:  visible; 默认值。内容不会被修剪，会呈现在元素框之外。 hidden; 内容会被修剪，并且其余内容是不可见的。 auto; 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。 scroll; 如果内容被">
   
     <link rel="alternative" href="/atom.xml" title="咕咕鸡不咕咕" type="application/atom+xml">
   
@@ -142,371 +146,175 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-overflow" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      揭秘overflow为hidden作用
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/31/overflow/" class="archive-article-date">
+
+        
+        <a href="/2019/01/31/overflow/" class="archive-article-date">
   	<time datetime="2019-01-31T05:58:51.405Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-31</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/31/overflow/">揭秘overflow为hidden作用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+        
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/22/return/" class="archive-article-date">
-  	<time datetime="2019-01-22T08:29:53.582Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/22/return/">return 用法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/15/localStorage/" class="archive-article-date">
-  	<time datetime="2019-01-15T07:50:04.960Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/15/localStorage/">localStorage存取对象数组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/07/ClickJacking/" class="archive-article-date">
-  	<time datetime="2019-01-07T10:16:27.782Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/07/ClickJacking/">点击劫持ClickJacking</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全验证</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/06/encode-decode/" class="archive-article-date">
-  	<time datetime="2019-01-06T09:38:20.924Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/06/encode-decode/">js 编码解码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
+    <div class="article-entry" itemprop="articleBody">
       
-        </div></section>
+        <p>最近遇到了一个给div设置 overflow:hidden 清除兄弟div的浮动的样式，于是深究一下：</p>
+<h4 id="一、属性值"><a href="#一、属性值" class="headerlink" title="一、属性值"></a>一、属性值</h4><p>提到overflow，就会想到他的几个属性值：<br>W3C是这样解释的:</p>
+<ul>
+<li>visible; 默认值。内容不会被修剪，会呈现在元素框之外。</li>
+<li>hidden; 内容会被修剪，并且其余内容是不可见的。</li>
+<li>auto; 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。</li>
+<li>scroll; 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。</li>
+<li>inherit; 规定应该从父元素继承 overflow 属性的值。<br>这几个属性想必大家都很熟悉，但是对hidden这个属性值你真的了解吗？</li>
+</ul>
+<h4 id="二、详解hidden的用法"><a href="#二、详解hidden的用法" class="headerlink" title="二、详解hidden的用法"></a>二、详解hidden的用法</h4><p>html代码示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;div1&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;div2&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>css代码示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">    background-color: black;</span><br><span class="line">&#125;</span><br><span class="line">.div1&#123;</span><br><span class="line">    background-color: aqua;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">&#125;</span><br><span class="line">.div2&#123;</span><br><span class="line">    background-color: red;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="1、隐藏溢出"><a href="#1、隐藏溢出" class="headerlink" title="1、隐藏溢出"></a>1、隐藏溢出</h6><p>这个很好理解，假如父元素div的的高度给150px小于子元素的高度之和200px时，给父元素设置<code>overflow:hidden</code>，这个时候即便是子元素的高度高出父元素，也会被隐藏；</p>
+<h6 id="2、清除浮动"><a href="#2、清除浮动" class="headerlink" title="2、清除浮动"></a>2、清除浮动</h6><p>给两个子元素div设置<code>float:left</code>，这时候的效果是黑色的外层div消失了，是因为浮动的元素脱离开了文档流，不占据空间，父元素识别不了子元素的高度，这个时候父元素设置<code>overflow:hidden</code>，效果就是在浏览器中，子元素的高度撑开了父元素的高度，除去子元素占据空间的的背景颜色，其余背景是父元素的背景色黑色；</p>
+<h6 id="3、解除坍塌"><a href="#3、解除坍塌" class="headerlink" title="3、解除坍塌"></a>3、解除坍塌</h6><p>什么是坍塌？<br>举个例子：如果给div1设置<code>margin-top:50px</code>,期待的效果是有一部分空间是高度50px,背景为黑色部分，但是事实并不是这样，这就是坍塌。这里多说一句：这种坍塌只针对于父亲的第一个儿子，div2设置<code>margin-top:50px</code>则不会有任何不妥。 防止这种坍塌现象就是给父元素设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">    background-color: black;</span><br><span class="line">    overflow：hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在多说一句：浮动的div不用考虑坍塌。</p>
+<p>没办法贴图，有兴趣的小伙伴可以敲一下试试!</p>
+<p>参考链接：<br><a href="https://blog.csdn.net/Hukaihe/article/details/51298665" target="_blank" rel="noopener">深入理解：overflow:hidden——溢出,坍塌,清除浮动</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/28/essay/" class="archive-article-date">
-  	<time datetime="2018-12-28T03:35:41.655Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/28/essay/">小分享</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/31/overflow/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/26/encrypt-decrypt/" class="archive-article-date">
-  	<time datetime="2018-12-26T09:01:24.755Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-26</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/22/return/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">return 用法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/26/encrypt-decrypt/">md5加密 + crypto-js aes解密</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全验证</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、属性值"><span class="toc-number">1.</span> <span class="toc-text">一、属性值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、详解hidden的用法"><span class="toc-number">2.</span> <span class="toc-text">二、详解hidden的用法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1、隐藏溢出"><span class="toc-number">2.0.1.</span> <span class="toc-text">1、隐藏溢出</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2、清除浮动"><span class="toc-number">2.0.2.</span> <span class="toc-text">2、清除浮动</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3、解除坍塌"><span class="toc-number">2.0.3.</span> <span class="toc-text">3、解除坍塌</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/21/git-bisect/" class="archive-article-date">
-  	<time datetime="2018-12-21T07:46:14.756Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-21</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/21/git-bisect/">git bisect 二分法快速定位问题代码</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git 命令使用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/14/slb/" class="archive-article-date">
-  	<time datetime="2018-12-14T08:48:06.414Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/14/slb/">域名+nginx负载均衡</a>
-    </h1>
+  <div id="SOHUCS" sid="overflow" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/09/deploy/" class="archive-article-date">
-  	<time datetime="2018-12-09T08:52:40.954Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/09/deploy/">静态资源部署</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -543,8 +351,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
